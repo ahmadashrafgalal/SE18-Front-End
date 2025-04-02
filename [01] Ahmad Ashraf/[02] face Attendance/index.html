@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Attendance System</title>
+</head>
+<body>
+
+    <div class="container flex" style="align-items: center;margin: 20px 20px 0px 20px;">
+        <img src="icon.png" alt="profile" class=" h-12 w-12"  style="margin-right: 15px;">
+        <h1 class="text-3xl font-bold ">Attendance System</h1>
+    </div>
+
+    <!-- right div that has capture img -->
+    <div class="card lg:card-side bg-base-100 items-center">
+        <!-- 1S -->
+        <div class="card bg-base-100 shadow" style="width: 730px !important;margin-left: 60px;margin-right: 50px;">
+            <figure class="px-10 pt-10">
+                <img
+                src="face.jfif"
+                alt="Shoes"
+                class="rounded-xl temp_image" />
+            </figure>
+            <div class="card-body items-center text-center" style="padding: 10px !important;margin-top: -40px;">
+                <h2 class="card-title">Register !</h2>
+                <p>Click the button to open the camera</p>
+                <div class="card-actions">
+                    <button class="btn btn-primary w-96 open_cam_btn">Open Camera</button>
+                </div>
+            </div>
+        </div>
+        <!-- 1E -->
+        <div class="left">
+            <!-- 2S -->
+            <!-- div for add discription to project -->
+            <div class="card bg-base-100" style="width: 730px !important;margin-left: 60px;margin-top: -50px;">
+                <div class="card-body" style="padding: 10px !important;">
+                    <h2 class="card-title text-3xl">Attendance System</h2>
+                    <p> This is a simple attendance system that uses face recognition to mark attendance. </p>
+                    <p>Attendance System is a web application that allows you to take attendance of students by capturing their images and storing them in the database. It also allows you to view the attendance of students.</p>
+                </div>
+            </div>
+    
+            <!-- 2E -->
+            <!-- login form -->
+            <div class="w-96 " style="margin: 40px;margin-left: 200px;">
+                <form>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Username</span>
+                        </label>
+                        <input type="text" placeholder="Enter your username" class="input input-bordered">
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Password</span>
+                        </label>
+                        <input type="password" placeholder="Enter your password" class="input input-bordered">
+                    </div>
+                    <div class="form-control mt-6">
+                        <button class="btn btn-primary w-96">Login</button>
+                        <p> login as admin?<a href="#" class="text-blue-500">click here</a> </p>
+                    </div>
+                </form>
+                <!-- login form -->
+            </div>
+        </div>
+    </div>
+
+
+    
+
+<script>
+    open_cam_btn = document.querySelector('.open_cam_btn');
+    temp_image = document.querySelector('.temp_image');
+    open_cam_btn.addEventListener('click', () => {
+        temp_image.src = ''
+    });
+
+</script>
+</body>
+</html>
