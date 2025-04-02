@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/CSS/Instructor/Add_Exam.css">
+    <link rel="stylesheet" href="static/CSS/Instructor/Course.css">
+    <link rel="stylesheet" href="static/CSS/Student/Student.css">
+    <link rel="stylesheet" href="static/CSS/tailwind.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.17/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/IMG/alla.png" type="image/x-icon">
+    <title>Dashboare</title>
+</head>
+<body>
+    <div class="con">
+        <div class="top" style="right:20px;margin-top:20px;">
+            <div class="header">
+                <div class="avatar" style="margin-left:50px">
+                    <div class="w-20 mask mask-squircle">
+                      <img src="static/IMG/profile.jpeg" style="margin-top:20px;"/>
+                    </div>
+                </div>
+                <h1 id="name"><span style="font-weight: bolder;">Hello,</span> Ahmad Ashraf Galal<div class="badge badge-secondary" style="position: absolute;top:40px;margin-left:0px;">Instructor</div></h1>
+            </div>
+
+                
+                <div class="card card-side shadow-xl" style="margin-top:170px;margin-left:25%;margin-bottom:10px;width: 50%;color:black">
+                  <figure>
+                    <img
+                      src="static/IMG/DS.jpeg"
+                      alt="Movie" />
+                  </figure>
+                  <div class="card-body">
+                    <h1 class="title " style="font-size:xx-large;margin-bottom:-5px;color:black "><i class="fa-solid fa-book fa-xl color:black" > </i> Data Structure</h1>
+                    <div class="badge badge-secondary badge-outline">CS321</div> 
+                    <h1 >Third Level</h1>
+                  </div>
+                </div>
+
+
+
+
+
+
+                
+
+                <div style="color:black;font-size:xx-large;margin-left:10%;margin-top:40px">
+                    <h1>📑 Assignments</h2>
+                </div>
+
+
+
+
+
+
+                <div style="width:75%;justify-content:center;margin-left:10%;margin-top:10px;color:black">
+                  <table class="table">
+                    <!-- head -->
+                    <thead  style="color:black">
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Assignment Name</th>
+                        <th>Assignment Date</th>
+                        <th>Uploads Count</th>
+                        <th>
+                          <button class="btn btn-warning" onclick="my_modal_1.showModal()" >Upload Assignment</button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- row 1 -->
+                      <tr>
+                        <th></th>
+
+                        <th>
+                          <div class="avatar">
+                            <i class="fa-solid fa-file fa-xl w-12"> </i>
+                        </div>
+                        </th>
+                        <td>
+                          <div class="flex items-center gap-3">
+                           
+                            <div>
+                              <div class="font-bold">First Assignment</div>
+                              <div class="text-sm opacity-50">Third Level</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          25 / 12 / 2021
+                          <br />
+                          <span class="badge badge-ghost badge-sm">11:58</span>
+                        </td>
+                        <td>44</td>
+                        <th>
+                          <button class="btn btn-ghost btn-xs">See Uploads</button>
+                          <button class="btn btn-warning btn-xs" onclick="my_modal_2.showModal()" >See Answers</button>
+                        </th>
+                      </tr>
+                      <!-- row 1 end -->
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="back">
+        </div>
+    </div>
+
+
+
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+          <h3 class="text-lg font-bold">Upload Solve for First Assignment</h3>
+          <form method="dialog" style="margin:20px">
+            <div>
+              <label for="file" class="label">Assignment Name</label>
+              <input style="margin:10px" type="text" placeholder="Assignment Name" class="input input-bordered input-primary w-full " />
+
+              <label for="file" class="label">Questions Count</label>
+              <input style="margin:10px" type="text" placeholder="Questions Count" class="input input-bordered input-primary w-full" />
+
+              <label for="file" class="label">Upload Assignment</label>
+              <input style="margin:10px" type="file" class="file-input file-input-bordered w-full " name="file"/>
+
+              <label for="image" class="label">Upload Pupil</label>
+              <input style="margin:10px" type="file" class="file-input file-input-bordered w-full " name="image"/>
+              
+            </div>
+            <div>
+              <button class="btn btn-info" method="submit" style="width:50%;margin-left:25%;margin-right:25%">submit</button>
+            </div>
+
+          </form>
+      <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="my_modal_2" class="modal">  
+          <div class="modal-box">    
+            <h3 class="text-lg font-bold">
+              Ahmad Ashraf Galal  
+              <span style="color:pink"> >> First Assignment</span>
+            </h3>    
+            <img src="pupil.jpg" alt="Avatar Tailwind CSS Component" style="margin-top:20px" />     
+            <div class="grid grid-cols-4 gap-4 mt-4"> <!-- تعديل هنا -->
+              <label class="input input-bordered flex items-center w-24"> 
+                1: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                2: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                3: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                4: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                5: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                6: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                7: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                8: <input type="text" value="5" /> 
+              </label>
+              <label class="input input-bordered flex items-center w-24"> 
+                9: <input type="text" value="5" /> 
+              </label>     
+            </div>     
+            <div class="modal-action">       
+              <form method="dialog">         
+                <button class="btn">Close</button>       
+              </form>     
+            </div>   
+          </div> 
+        </dialog>
+        
+
+</body>
+</html>

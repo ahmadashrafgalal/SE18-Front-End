@@ -1,0 +1,174 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+}
+
+html {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.sign-in-container {
+    width: 750px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #abaffe;
+    border-radius: 20px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#h1 {
+    font-size: 30px;
+    color: #fff;
+    margin-top: -10px;
+
+}
+
+
+.input-label {
+    position: absolute;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+#id_Inst_Name, #id_Inst_Email, #id_Inst_Phone, #id_Inst_Specialization,    .c6 , .c7 ,.c8 {
+    width: 30%;
+    padding: 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 0;
+}
+#Name_label{
+    left: 50px;
+    top: 20%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#id_Inst_Name{
+    left: 50px;
+    top: 24%;
+}
+
+#Email_label{
+    left: 450px;
+    top: 30%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#id_Inst_Email{
+    left: 450px;
+    top: 36%;
+}
+
+#Phone_label{
+    left: 50px;
+    top: 35%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#id_Inst_Phone{
+    left: 50px;
+    top: 39%;
+}
+#Age_label{
+    left: 450px;
+    top: 48%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#id_Inst_Specialization{
+    left: 450px;
+    top: 52%;
+}
+#Img_label{
+    left: 50px;
+    top: 52%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Inst_Profile_img{
+    position: absolute;
+    left: 50px;
+    top: 60%;
+}
+
+
+#id_Inst_Profile_img::-webkit-file-upload-button{
+    color: white;
+    background-color:#656bcd ;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    transition: .5s;
+
+
+}
+#id_Inst_Profile_img::-webkit-file-upload-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .5s;
+}
+#Year_label{
+    left: 450px;
+    top: 68%;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-link {
+    margin-top: 415px;
+    margin-left: 350px;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+}
+
+button {
+    width: 30%;
+    padding: 12px;
+    background-color: #3f3f3f;
+    color: #abaffe;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-top: -50px;
+    left:450px;
+    margin-left: 600px;
+    border: 5px solid #5c60b0;
+    border-style: dotted;
+}
+.img_div{
+    top: 10%;
+    left: 450px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

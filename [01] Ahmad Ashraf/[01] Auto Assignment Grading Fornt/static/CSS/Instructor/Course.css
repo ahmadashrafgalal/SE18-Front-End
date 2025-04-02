@@ -1,0 +1,18 @@
+#id_File_Title , #id_File_Description ,#id_Vid_Title , #id_Vid_Description {
+    width: 80%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 10px;
+}
+#id_File_File::-webkit-file-upload-button , #id_Vid_File::-webkit-file-upload-button{
+    border: none;
+    border-radius: 8px;
+    background-color: #6e74e3;
+    color: #fff;
+    padding: 8px;
+    transition: .5s;
+    margin: 20px;
+}

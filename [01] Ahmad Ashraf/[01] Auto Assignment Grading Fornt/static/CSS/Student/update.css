@@ -1,0 +1,94 @@
+.con1{
+    margin-top: 100px;
+    max-width:700px !important;
+    height: 400px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    justify-content: center;
+    margin: 20px;
+    padding: 50px;
+    border: none;
+    border-radius: 15px;
+    position: relative;
+}
+#id_S_Name{
+    margin-top: 20px;
+    margin-bottom:5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#id_S_Email{
+    margin-top: 20px;
+    margin-bottom:5px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+} 
+#id_S_Phone{
+    margin-top: 20px;
+    margin-bottom:5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#id_S_Age{
+    margin-top: 20px;
+    margin-bottom:5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#id_S_AcademicYear{
+    margin-top: 20px;
+    margin-bottom:5px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#id_S_Profile_img{
+    margin-top: 20px;
+    margin-bottom:5px;
+    padding: 10px;
+
+}
+#id_S_Profile_img::-webkit-file-upload-button{
+    background: #680085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.min_avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    background: #680085;
+    margin: 10px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    border: 5px solid #a862bc;
+}
+.submit_btn{
+    background-color: #a100ce  !important;
+    color: white !important;
+    width: 25%;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    transition: .5s;
+}
+.submit_btn:hover{
+    background-color: #680085 !important;
+    transform: scale(1.05) !important;
+}

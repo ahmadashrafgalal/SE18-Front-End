@@ -1,0 +1,227 @@
+.cont{
+    width: 50%;
+    height: 50vh;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    margin-left: 25%;
+    height: auto;
+    position: relative;
+}
+#id_Exam_Title , #id_Exam_Description , #id_start_time ,#id_end_time , #id_timer,#id_date{
+    min-width:40%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 4%;
+}
+#id_timer{
+    max-width:45%;
+}
+#btn{
+    min-width: 40%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 30%;
+    transition: .5s;
+}
+#btn:hover{
+    background-color: #34495e;
+    letter-spacing: 1px;
+    transform:scale(1.02);
+}
+.form{
+    background-color: rgb(151, 77, 221);
+    color: white;
+    font-size: xx-large;
+    width: 240px;
+    height: auto;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    position: absolute ;
+    top:-40px;
+    left: 20%;
+    justify-content: center;
+    padding-left:40px;
+}
+#Exam_Title , #Exam_Description , #start_time ,#end_time , #timer , #date{
+    position: absolute;
+    font-family: 'Nunito';
+    font-size: large;
+    font-weight: bold;
+}
+#Exam_Title{
+    top: 50px;
+    left: 10%;
+}
+#Exam_Description{
+    top: 50px;
+    left:53%;
+}
+#start_time{
+    top: 150px;
+    left: 10%;
+}
+#end_time{
+    top: 150px;
+    left: 53%;
+}
+#timer{
+    top: -20px;
+    left: 4%;
+}
+#date{
+    top: 250px;
+    left: 10%;
+}
+/*--------------------------------------------------------------------*/
+#id_Question {
+    min-width:80%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 4%;
+
+}
+#id_Option_1 , #id_Option_2 , #id_Option_3 ,#id_Option_4 , #id_Correct_Answer{
+    min-width:40%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 4%;
+}
+#Question,#Option_1 , #Option_2 , #Option_3 ,#Option_4 , #Correct_Answer{
+    position: absolute;
+    font-family: 'Nunito';
+    font-size: large;
+    font-weight: bold;
+}
+#Question{
+    top: 50px;
+    left: 10%;
+}
+#Option_1{
+    top: 150px;
+    left: 10%;
+}
+#Option_2{
+    top: 150px;
+    left: 53%;
+}
+#Option_3{
+    top: 250px;
+    left: 10%;
+}
+#Option_4{
+    top: 250px;
+    left: 53%;
+}
+#Correct_Answer{
+    top: 350px;
+    left: 10%;
+}
+.btns{
+    position: absolute;
+    width: 40%;
+    top: 390px;
+    left: 53%;
+    display: flex;
+    justify-content: space-between;
+
+}
+#btn_1,#btn_2{
+    min-width: auto;
+    padding: 10px 20px 10px 20px;
+    height: auto;
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+
+}
+#btn_1:hover,#btn_2:hover{
+    background-color: #34495e;
+    letter-spacing: 1px;
+    transform:scale(1.02);
+}
+#btn_1{
+    left: 0%;
+}
+#btn_2{
+    left: 50%;
+}
+.chkbx{
+    position: absolute !important;
+    top: 280px;
+    left: 53%;
+    width: auto;
+}
+/*--------------------------------------------------------------------*/
+#id_C_Name , #id_C_Description , #id_C_Cost ,#id_C_Day , #id_C_Duration,#id_Room{
+    min-width:40%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 4%;
+
+}
+#C_Name , #C_Description , #C_Cost ,#C_Day , #C_Duration, #C_Room{
+    position: absolute;
+    font-family: 'Nunito';
+    font-size: large;
+    font-weight: bold;
+}
+#C_Name{
+    top: 50px;
+    left: 10%;
+}
+#C_Description{
+    top: 50px;
+    left: 53%;
+}
+#C_Cost{
+    top: 150px;
+    left: 10%;
+}
+#C_Day{
+    top: 150px;
+    left: 53%;
+}
+#C_Duration{
+    top: 250px;
+    left: 10%;
+}
+#C_Room{
+    top: 250px;
+    left: 53%;
+}
+#id_C_Img{
+    margin-left:20px ;
+    min-width: 150px;
+}
+#id_C_Img::-webkit-file-upload-button{
+    border-radius:8px ;
+    border: none;
+    padding:15px;
+    background-color: rgb(151, 77, 221);
+}
+.sub{
+    display: none;
+}
