@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+        <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+        <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<body style="padding: 10px; padding-top: .01%;">
+    <!---------------------------------------- Navbar ---------------------------------------->
+    <div class="navbar bg-base-100 shadow flex" style="position: fixed ;z-index: 99999;padding:15px 0px 15px 15px">
+          <!-- side bar -->
+        <div class="flex-none" style="padding: 0px 20px 0px 0px;">
+           
+       </div>
+
+       
+       <div class="flex-1">
+           <img src="D:\My applicatios\Graduation_Project\new_data\Backend_Project\Capture.PNG" alt="DaisyUI logo" class="w-10 h-10" />
+           <a class="font-bold text-xl ml-4">SCMS</a>
+       </div>
+
+        <div class="flex-none">
+            <div class="flex justify-between font-bold w-full px-4">
+                <div class="flex gap-x-4"> 
+                    <button class="btn btn-outline"> Add Activity</button>
+                    <button class="btn btn-outline">All Activity</button>
+                </div>
+            </div>
+            
+
+           <!-- Profile or login -->
+           <div class="dropdown dropdown-end" style="padding: 0px  20px 0px 20px;">
+           <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar" >
+               <div class="mask mask-squircle w-24" h-26>
+                   <img src="D:\My applicatios\Graduation_Project\new_data\Backend_Project\fafc97db-31a2-48a5-bcc2-fbe6ce48c357.jpg" />
+                 </div>
+           </div>
+           <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+               <li>
+               <a class="justify-between">
+                   Profile
+                   <span class="badge">New</span>
+               </a>
+               </li>
+               <li><a>Logout</a></li>
+           </ul>
+           </div>
+   
+       </div>
+   </div>
+    <!---------------------------------------- End of Navbar ---------------------------------------->
+    <!---------------------------------------- Main ---------------------------------------->
+
+    <div class="Main" style="margin-top: 100px;">
+        <div class="card bg-base-100 shadow-xl" style="padding: 40px;">
+            <div class="flex justify-center" style="margin-top: -15px;">
+                <h2 class="font-bold text-lg" style="font-size: 50px;" >Add New Activity</h2>
+            </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Activty Name</span>
+                    </label>
+                    <input type="text" placeholder="name" class="input input-bordered" name="">
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Details</span>
+                    </label>
+                    <input type="text" placeholder="Details" class="input input-bordered input-lg" name="">
+                </div>
+                
+                
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Start Date</span>
+                    </label>
+                    <input type="date" class="input input-bordered" name="start_date">
+                </div>
+                
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Finish Date</span>
+                    </label>
+                    <input type="date" class="input input-bordered" name="finish_date">
+                </div>
+                
+
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Image</span>
+                    </label>
+                    <div class="con flex" style="align-items: center;">
+                        <div class="avatar">
+                            <div class="w-24 rounded-xl">
+                                <img id="profile_pic" src="D:\My applicatios\Graduation_Project\new_data\Backend_Project\20945942.jpg" />
+                            </div>
+                        </div>
+                        <input id="id_Inst_Profile_img" name ="image" type="file" class="file-input w-full max-w-xs " style="margin-left: 50px;" />
+                    </div>
+                </div>
+
+               
+
+                <div class="flex justify-center" style="margin: 35px 0px 0px 0px;" >
+                    <button class="btn btn-soft btn-primary w-96" style="background-color: #0d6efd; color: white;">Join Now</button>
+                   
+                </div>
+            </form>
+        </div>
+ 
+    </div>
+    <!---------------------------------------- End of Main ---------------------------------------->
+
+
+
+</body>
+</html>
