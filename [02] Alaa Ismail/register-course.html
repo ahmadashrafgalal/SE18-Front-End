@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body style="padding: 10px; padding-top: .01%;">
+    <style>
+        .table-container {
+          width: 1430px;
+          overflow: hidden; 
+        }
+        
+        .table {
+          table-layout: fixed;
+          width: 100%; 
+        }
+        
+        .table td, .table th {
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis; 
+          white-space: nowrap; 
+        }
+        
+        .table th:nth-child(1) { width: 5%; }
+        .table th:nth-child(2) { width: 15%; }
+        .table th:nth-child(3) { width:20%; } 
+        .table th:nth-child(4) { width: 10%; }
+        .table th:nth-child(5) { width: 10%; }
+      </style>
+      
+      <div class="table-container rounded-box border border-base-content/5 bg-base-100">
+        <table class="table" id="creditsTable">
+        
+        </table>
+      </div>
+
+    <!---------------------------------------- Navbar ---------------------------------------->
+    <div class="navbar bg-base-100 shadow flex" style="position: fixed ;z-index: 99999;padding:15px 0px 15px 15px">
+         <div class="flex-none" style="padding: 0px 20px 0px 0px;">
+           
+        </div>
+
+        
+        <div class="flex-1">
+            <img src="D:\My applicatios\Graduation_Project\new_data\Backend_Project\Capture.PNG" alt="DaisyUI logo" class="w-10 h-10" />
+            
+            <a class="font-bold text-xl ml-4">SCMS</a>
+        </div>
+
+       
+
+        <div class="flex-none">
+            <div class="flex justify-between font-bold w-full px-4">
+                <div class="flex gap-x-4"> 
+                    <a href="#" class="text-500 hover:underline">Register Course</a>
+                    <a href="#" class="text-500 hover:underline">Student Courses</a>
+                    <a href="#" class="text-500 hover:underline">Registered Courses</a>
+                </div>
+            </div>
+            
+
+            <!-- Profile or login -->
+            <div class="dropdown dropdown-end" style="padding: 0px  20px 0px 20px;">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar" >
+                <div class="mask mask-squircle w-24" h-26>
+                    <img src="D:\My applicatios\Graduation_Project\new_data\Backend_Project\fafc97db-31a2-48a5-bcc2-fbe6ce48c357.jpg" />
+                  </div>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                </a>
+                </li>
+                <li><a>Logout</a></li>
+            </ul>
+            </div>
+    
+        </div>
+    </div>
+    <!---------------------------------------- End of Navbar ---------------------------------------->
+    <!---------------------------------------- Main ---------------------------------------->
+    <div>
+        <div class="px-10 "> 
+    <div class="Main w-full" style="margin-top: 100px;">
+        
+ 
+                <div class="card-body text-sm "> <!-- تقليل حجم الخط العام -->
+                    <div class="place-items-center">
+                    <h1 class="card-title text-base font-bold text-xl ">Student Info</h1>
+                </div>
+                    <div class="grid grid-cols-3 gap-2 divide-y divide-gray-300/50">
+                        <!-- الصف الأول -->
+                        <div class="stat place-items-center border-r border-gray-300/50 p-2">
+                            <div class="stat-title text-xs">Code</div>
+                            <div class="stat-value text-base">221080</div>
+                        </div>
+                        <div class="stat place-items-center border-r border-gray-300/50 p-2">
+                            <div class="stat-title text-xs">GPA</div>
+                            <div class="stat-value text-base text-primary">3.00</div>
+                        </div>
+                        <div class="stat place-items-center p-2">
+                            <div class="stat-title text-xs">Major</div>
+                            <div class="stat-value text-base">General</div>
+                        </div>
+        
+                        <!-- الصف الثاني -->
+                        <div class="stat place-items-center border-t border-r border-gray-300/50 p-2">
+                            <div class="stat-title text-xs">Student Name</div>
+                            <div class="stat-value text-base">Alaa Ismail Mohamed</div>
+                        </div>
+                        <div class="stat place-items-center border-t border-r border-gray-300/50 p-2">
+                            <div class="stat-title text-xs">Percentage</div>
+                            <div class="stat-value text-base text-primary">80.25841</div>
+                        </div>
+                        <div class="stat place-items-center border-t border-gray-300/50 p-2">
+                            <div class="stat-title text-xs">Achieved Hours</div>
+                            <div class="stat-value text-base">34</div>
+                        </div>
+                    </div>
+                </div>
+                   
+        
+          
+    </div>
+        </div>
+        <div class="px-4 "> 
+          
+        
+                <div class="Main w-full">
+                    <div class="card-body text-sm">
+                        <table class="w-full border-collapse border border-gray-300 text-sm text-center">
+                            <thead class="bg-gray-200">
+                                <tr>
+                                    <th class="border border-gray-300 p-2">Type</th>
+                                    <th class="border border-gray-300 p-2">General-M</th>
+                                    <th class="border border-gray-300 p-2">General-O</th>
+                                    <th class="border border-gray-300 p-2">College-M</th>
+                                    <th class="border border-gray-300 p-2">College-O</th>
+                                    <th class="border border-gray-300 p-2">Major-M</th>
+                                    <th class="border border-gray-300 p-2">Major-O</th>
+                                    <th class="border border-gray-300 p-2">Project-M</th>
+                                    <th class="border border-gray-300 p-2">Project-O</th>
+                                    <th class="border border-gray-300 p-2 text-blue-500">Earned Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 p-2 bg-gray-200">Earned</td>
+                                    <td class="border border-gray-300 p-2 ">9</td>
+                                    <td class="border border-gray-300 p-2">5</td>
+                                    <td class="border border-gray-300 p-2">17</td>
+                                    <td class="border border-gray-300 p-2">3</td>
+                                    <td class="border border-gray-300 p-2">0</td>
+                                    <td class="border border-gray-300 p-2">0</td>
+                                    <td class="border border-gray-300 p-2">0</td>
+                                    <td class="border border-gray-300 p-2">0</td>
+                                    <td class="stat-value text-base text-primary" >34</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 p-2 bg-gray-200">Remainder</td>
+                                    <td class="border border-gray-300 p-2 ">1</td>
+                                    <td class="border border-gray-300 p-2">0</td>
+                                    <td class="border border-gray-300 p-2">41</td>
+                                    <td class="border border-gray-300 p-2">9</td>
+                                    <td class="border border-gray-300 p-2">30</td>
+                                    <td class="border border-gray-300 p-2">18</td>
+                                    <td class="border border-gray-300 p-2">11</td>
+                                    <td class="border border-gray-300 p-2">1</td>
+                                    <td class="stat-value text-base text-primary">110</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                
+                  
+            </div>  
+
+        <div class="px-10">
+            <div class="flex justify-center items-center font-bold text-lg my-2 px-6 py-3 bg-gray-200 rounded-lg shadow-md w-fit mx-auto">
+                    General Mandotry <div class="badge badge-sm badge-success ml-2"  style="color: white;"></div>
+            </div>
+    
+                <!-- Card -->
+                <div class="table-container rounded-box border border-base-content/5 bg-base-100">
+                    <table class="table" id="creditsTable">
+                        <!-- head -->
+                        <thead class="bg-gray-200">
+                            <tr class="font-bold text-xl">
+                                <th></th>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-bold">
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>CS101</td>
+                                <td>Introduction to </td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                         </tr>
+                            <!-- row 2 -->
+                            <tr>
+                                <th>2</th>
+                                <td>EE101</td>
+                                <td>Electronics</td>
+                                <td class="credits">3</td>
+                                <td>
+                                    <button class="btn btn-error" style="color: white;">
+                                        <i class="fa fa-times"></i> Delete
+                                    </button>
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <th>3</th>
+                                <td>HU142</td>
+                                <td>Privacy and Civil Liberties</td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            
+                <div class="flex justify-center items-center font-bold text-lg my-2 px-6 py-3 bg-gray-200 rounded-lg shadow-md w-fit mx-auto">
+                    General Optional <div class="badge badge-sm badge-warning ml-2"  style="color: white;"></div>
+                </div>
+                <div class=" rounded-box border border-base-content/5 bg-base-100 "style="width: 1430px; overflow: auto;">
+                    <table class="table" id="creditsTable">
+                        <!-- head -->
+                        <thead class="bg-gray-200">
+                            <tr class="font-bold text-xl">
+                                <th></th>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-bold">
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>CS101</td>
+                                <td>Physics</td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                            </tr>
+                            <!-- row 2 -->
+                            
+                                
+                            </tr>
+                            
+                            
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="flex justify-center items-center font-bold text-lg my-2 px-6 py-3 bg-gray-200 rounded-lg shadow-md w-fit mx-auto">
+                    College Mandotry <div class="badge badge-sm badge-success ml-2"  style="color: white;"></div>
+                </div>
+                <!-- Card -->
+                <div class=" rounded-box border border-base-content/5 bg-base-100"  style="width: 1430px; overflow: auto;">
+                    <table class="table" id="creditsTable">
+                        <!-- head -->
+                        <thead class="bg-gray-200">
+                            <tr class="font-bold text-xl">
+                                <th></th>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-bold">
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>CS101</td>
+                                <td>Introduction to </td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                                <th>2</th>
+                                <td>EE101</td>
+                                <td>Electronics</td>
+                                <td class="credits">3</td>
+                                <td>
+                                    <button class="btn btn-error" style="color: white;width :95px">
+                                        <i class="fa fa-times"></i> Delete
+                                    </button>
+                                </td>
+                                
+                            </tr>
+                           
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="flex justify-center items-center font-bold text-lg my-2 px-6 py-3 bg-gray-200 rounded-lg shadow-md w-fit mx-auto">
+                    College Optional <div class="badge badge-sm badge-warning ml-2"  style="color: white;"></div>
+                </div>
+              
+                <!-- Card -->
+                <div class=" rounded-box border border-base-content/5 bg-base-100"  style="width: 1430px; overflow: auto;">
+                    <table class="table" id="creditsTable">
+                        <!-- head -->
+                        <thead class="bg-gray-200">
+                            <tr class="font-bold text-xl">
+                                <th></th>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-bold">
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>CS101</td>
+                                <td>Introduction to </td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                            </tr>
+                            
+                            <tr>
+                                <th>3</th>
+                                <td>HU142</td>
+                                <td>Privacy and Civil Liberties</td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="flex justify-center items-center font-bold text-lg my-2 px-6 py-3 bg-gray-200 rounded-lg shadow-md w-fit mx-auto">
+                    Major Mandotry <div class="badge badge-sm badge-success ml-2"  style="color: white;"></div>
+                </div>
+    
+                
+    
+              
+                <!-- Card -->
+                <div class=" rounded-box border border-base-content/5 bg-base-100"  style="width: 1430px; overflow: auto;">
+                    <table class="table" id="creditsTable">
+                        <!-- head -->
+                        <thead class="bg-gray-200">
+                            <tr class="font-bold text-xl">
+                                <th></th>
+                                <th>Code</th>
+                                <th>Course</th>
+                                <th>Credits</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-bold">
+                           
+                            <tr>
+                                <th>4</th>
+                                <td>HU111</td>
+                                <td>English Language I</td>
+                                <td class="credits">3</td>
+                                <td ><button class="btn btn-primary"style="color: white;width :95px"><i class="fa fa-plus"></i>Add</button></td>
+                      
+                            </tr>
+                            
+                        </tbody>
+                        
+                    </table>
+                </div>
+            
+    
+    
+           
+    
+    
+          
+             
+               
+                
+               
+               
+            </div>
+    </div>
+    <!---------------------------------------- End of Main ---------------------------------------->
+
+</body>
+</html>
