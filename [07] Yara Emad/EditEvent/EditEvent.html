@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <title>Edit Event</title>
+</head>
+
+<body>
+    <div class="container mx-auto p-6 bg-white mt-10">
+        <h1 class="text-4xl font-semibold text-primary">Edit Events</h1>
+        <form action="" method="post">
+            <div class="mt-5">
+                <label class="font-bold text-xl text-gray-700">Name</label>
+                <input type="text" placeholder="Enter Name" name="name" id="name"
+                    class="input input-bordered border-1 rounded-3xl w-full mt-4 px-5" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>
+                    <label class="block text-gray-700">Location</label>
+                    <input type="text" placeholder="Enter Location" name="location" id="location"
+                        class="input input-bordered border-1 rounded-3xl w-full mt-4 px-5" />
+                </div>
+                <div>
+                    <label class="block text-gray-700">Date</label>
+                    <input type="datetime-local" name="date" id="date"
+                        class="input input-bordered border-1 rounded-3xl w-full mt-4 px-5" />
+                </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700">Capacity</label>
+                    <input type="number" min="0" value="0" name="capacity" id="capacity"
+                        class="input input-bordered border-1 rounded-3xl w-full mt-4 px-5" />
+                </div>
+                <div class="mt-6 flex justify-end space-x-4">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="../EventsAdmin/eventsAdmin.html" class="btn btn-red-700">Cancel</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./EditEvent.js"></script>
+</body>
+
+</html>
