@@ -1,103 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
+// const cardsDiv = document.querySelector('.cards');
+// events.forEach(element => {
+//     let flag = false;
+//     let completed = (element.registered == element.capacity);
+//     for (const userEvent of userEvents) {
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/csss/tw-elements.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-    <!-- <script src="https://cdn.tailwindcss.com/3.3.0"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="events.css"> -->
-    <title>Events</title>
-</head>
+//         if (userEvent.userId == currentUser.id && userEvent.eventId === element.id) {
+//             flag = true;
+//             break;
+//         }
+//     }
+//     cardsDiv.innerHTML += `
+// <div class="card join-item bg-base-100 rounded-lg shadow-sm hover:shadow-lg">
+//                     <div class="card-body bg-gray-100">
+//                         <h4 class="card-title">${element.name}</h4>
+//                         <p class="text-primary">${element.date}</p>
+//                         <p class="text-primary">${element.location}</p>
+//                         <div class="card-actions justify-start">
+//                         ${((flag) ? ('<button class="btn btn-primary text-capitalize">Cancel</button>') : (((completed) ? ('<button class="btn btn-light text-capitalize" disabled>Book Now</button>') : ('<button class="btn btn-neutral-content text-capitalize">Book Now</button>'))))}
 
-<body>
+//                         </div >
+//                     </div >
+//                 </div >
+//     `;
+//     let btn = cardsDiv.querySelectorAll('.btn')[cardsDiv.querySelectorAll('.btn').length - 1];
+//     console.log(btn.innerText);
+//     console.log("*****************************");
+//     if (btn) {
+//         btn.addEventListener('click', () => {
 
-    <div class="container sm:container m-auto">
-        <header>
-            <div class="navbar bg-base-100 shadow-sm">
-                <div class="navbar-start">
-                    <div class="dropdown">
-                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h7" />
-                            </svg>
-                        </div>
-                        <ul tabindex="0"
-                            class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
-                            <li><a><i class="fas fa-home"></i> Homepage</a></li>
-                            <li><a><i class="fas fa-book"></i> Courses</a></li>
-                            <li><a><i class="fas fa-table"></i> Tables</a></li>
-                            <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
-                            <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
-                            <li><a><i class="fas fa-file-alt"></i> Exams</a></li>
-                            <li><a><i class="fas fa-book-reader"></i> Library</a></li>
-                            <li><a><i class="fas fa-running"></i> Activities</a></li>
-                            <li><a href="./events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                            <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+//             if (btn.innerText == 'Cancel') {
+//                 // Cancel the booking
+//                 userEvents = userEvents.filter(userEvent => !(userEvent.userId == currentUser.id && userEvent.eventId === element.id));
+//                 element.registered--;
+//                 btn.classList.remove('btn-primary');
+//                 btn.classList.add('btn-neutral-content');
+//                 btn.innerText = 'Book Now';
+//             } else if (element.registered < element.capacity) {
+//                 // Book the event
+//                 userEvents.push({ userId: currentUser.id, eventId: element.id });
+//                 element.registered++;
+//                 btn.classList.remove('btn-neutral-content');
+//                 btn.classList.add('btn-primary');
+//                 btn.innerText = 'Cancel';
+//             }
+//             console.log(events);
+//             console.log("*****************************");
+//             console.log(userEvents);
 
-                            <!-- Admin-only option -->
-                            <li><a><i class="fas fa-user-plus"></i> Register</a></li>
-                        </ul>
-                    </div>
-                </div>
+//         });
+//     }
+// });
 
-                <div class="navbar-center">
-                    <div class="flex-1">
-                        <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10" />
 
-                    </div>
+const cardsDiv = document.querySelector('.cards');
 
-                    <a class="btn btn-ghost text-xl">SCMS</a>
+// Clear the container first
+cardsDiv.innerHTML = '';
+let thisEvents = events;
+thisEvents.forEach(element => {
+    let isRegistered = userEvents.some(userEvent =>
+        userEvent.userId == currentUser.id && userEvent.eventId === element.id
+    );
+    let isFull = element.registered == element.capacity;
 
-                    <!-- put any extra links you need here ex: <a class="link link-hover">extra link</a> -->
-
-                </div>
-
-                <div class="navbar-end">
-                    <div class="dropdown dropdown-end">
-                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                            <div class="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                            </div>
-                        </div>
-                        <ul tabindex="0"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
-                            <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
-                            <li><a><i class="fas fa-user"></i> Profile</a></li>
-                            <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
+    const card = document.createElement('div');
+    card.className = 'card join-item bg-base-100 rounded-lg shadow-sm hover:shadow-lg';
+    card.innerHTML = `
+        <div class="card-body bg-gray-100">
+            <h4 class="card-title">${element.name}</h4>
+            <p class="text-primary">${element.date}</p>
+            <p class="text-primary">${element.location}</p>
+            <div class="card-actions justify-start">
+                ${isRegistered
+            ? '<button class="btn btn-primary text-capitalize">Cancel</button>'
+            : isFull
+                ? '<button class="btn btn-light text-capitalize" disabled>Book Now</button>'
+                : '<button class="btn btn-neutral-content text-capitalize">Book Now</button>'
+        }
             </div>
+        </div>
+    `;
 
+    const btn = card.querySelector('.btn');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            if (btn.textContent === 'Cancel') {
+                // Cancel the booking
+                userEvents = userEvents.filter(userEvent =>
+                    !(userEvent.userId == currentUser.id && userEvent.eventId === element.id)
+                );
+                element.registered--;
 
-            <div class="h-65 flex flex-col justify-center items-start">
-                <h1 class="text-4xl font-semibold mb-3">Welcome to our latest events</h1>
-                <p class="text-gray-500">Here is the latest events and webinars. Book your place and enjoy with us. A
-                    unique experience is
-                    waiting
-                    for you!</p>
-            </div>
-        </header>
-        <main>
-            <div class="flex flex-row justify-between items-baseline mb-5">
-                <h2 class="text-3xl font-semibold">Our Events</h2>
-                <a href="../BookedEvents/events.html" class="btn btn-primary text-capitalize">View Booked Events</a>
-            </div>
-            <div class="cards join grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            </div>
-        </main>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="../variables.js"></script>
-    <script src="./events.js"></script>
-</body>
+                btn.classList.replace('btn-primary', 'btn-neutral-content');
+                btn.textContent = 'Book Now';
+            } else if (element.registered < element.capacity) {
+                // Book the event
+                userEvents.push({ userId: currentUser.id, eventId: element.id });
+                element.registered++;
+                btn.classList.replace('btn-neutral-content', 'btn-primary');
+                btn.textContent = 'Cancel';
 
-</html>
+                // Disable button if event is now full
+                if (element.registered == element.capacity) {
+                    btn.disabled = true;
+                }
+            }
+        });
+    }
+
+    cardsDiv.appendChild(card);
+});
