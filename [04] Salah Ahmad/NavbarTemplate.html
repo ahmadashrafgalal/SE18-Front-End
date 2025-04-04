@@ -11,6 +11,7 @@
     <title>Template</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body style="padding: 10px; padding-top: .01%;">
 
@@ -21,22 +22,22 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
                 </div>
                 <ul
-                    tabindex="0"
-                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                    <li><a>Homepage</a></li>
-                    <li><a>Courses</a></li>
-                    <li><a>Tables</a></li>
-                    <li><a>Attendance</a></li>
-                    <li><a>Assignment</a></li>
-                    <li><a>Exams</a></li>
-                    <li><a>Library</a></li>
-                    <li><a>Activities</a></li>
-                    <li><a>Events</a></li>
-                    <li><a>Complains</a></li>
-
-<!-- This option is only available for admin --> <li><a>Register</a></li> 
-                </ul>
-          </div>
+                tabindex="0"
+                class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                <li><a><i class="fas fa-book"></i> Courses</a></li>
+                <li><a><i class="fas fa-table"></i> Tables</a></li>
+                <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                <li><a><i class="fas fa-file-alt"></i> Exams</a></li>
+                <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                <li><a><i class="fas fa-running"></i> Activities</a></li>
+                <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+              
+                <!-- Admin-only option -->
+                <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+              </ul>          </div>
         </div>
 
         <div class="navbar-center">
@@ -60,12 +61,12 @@
                             src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                     </div>
               </div>
-              <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li><a>login</a></li>
-                <li><a>Profile</a></li>
-                <li><a>Logout</a></li>
-              </ul>
-            </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                  <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                  <li><a><i class="fas fa-user"></i> Profile</a></li>
+                  <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+              </div>
         </div>
     </div>
     </body>
