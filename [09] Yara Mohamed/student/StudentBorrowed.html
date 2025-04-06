@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Borrowed Books</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content { padding-top: 80px; }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px;
+        }
+        .book-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .overdue-card {
+            border-left: 4px solid #f87171;
+            position: relative;
+        }
+        .overdue-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f87171;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .book-cover {
+            height: 200px;
+            object-fit: cover;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow">
+        <div class="flex-1">
+            <img src="D:\Collage\Softwere Engineer\Project\Library\Front(Library)\Capture.png" alt="Logo" class="h-10">
+            <a class="btn btn-ghost text-xl">SCMS - Student</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="StudentBooks.html">Books</a></li>
+                <li><a href="StudentBorrowed.html" class="font-bold">My Books</a></li>
+            </ul>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="User">
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="StudentProfile.html">Profile</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content p-6">
+        <h1 class="text-2xl font-bold mb-6">My Borrowed Books</h1>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="borrowedBooksContainer">
+            <!-- Books will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Load data
+        const books = JSON.parse(localStorage.getItem('libraryBooks')) || [];
+        const currentUser = JSON.parse(localStorage.getItem('currentStudent')) || { id: 1, name: "Student" };
+        let borrowedBooks = JSON.parse(localStorage.getItem('studentBorrowedBooks')) || [];
+        
+        // Display borrowed books as cards
+        function loadBorrowedBooks() {
+            const container = document.getElementById('borrowedBooksContainer');
+            container.innerHTML = '';
+            
+            // Filter books borrowed by current user and not returned
+            const userBorrowedBooks = borrowedBooks.filter(b => 
+                b.studentId === currentUser.id && !b.returned
+            );
+            
+            if (userBorrowedBooks.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <i class="fas fa-book-open text-4xl text-gray-300 mb-4"></i>
+                        <p class="text-lg text-gray-500">You don't have any borrowed books</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            userBorrowedBooks.forEach(borrowed => {
+                const book = books.find(b => b.id === borrowed.bookId);
+                if (!book) return;
+                
+                const dueDate = new Date(borrowed.dueDate);
+                const today = new Date();
+                const isOverdue = today > dueDate;
+                const daysLeft = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+                const hasContent = book.content && book.content.data;
+                
+                const card = document.createElement('div');
+                card.className = `book-card ${isOverdue ? 'overdue-card' : ''}`;
+                card.innerHTML = `
+                    <div class="card bg-base-100 shadow h-full">
+                        ${isOverdue ? '<span class="overdue-badge">Overdue</span>' : ''}
+                        <figure class="px-4 pt-4">
+                            ${book.cover ? 
+                                `<img src="${book.cover}" alt="${book.title}" class="book-cover w-full rounded-lg">` : 
+                                `<div class="book-cover w-full bg-gray-200 flex items-center justify-center rounded-lg">
+                                    <i class="fas fa-book text-4xl text-gray-400"></i>
+                                </div>`
+                            }
+                        </figure>
+                        <div class="card-body p-4 flex flex-col">
+                            <div class="flex-1">
+                                <h2 class="card-title text-sm line-clamp-2">${book.title}</h2>
+                                <p class="text-xs text-gray-500 line-clamp-1">by ${book.author}</p>
+                                
+                                <div class="divider my-2"></div>
+                                
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <p class="text-gray-500">Borrowed:</p>
+                                        <p>${borrowed.borrowDate}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Due:</p>
+                                        <p class="${isOverdue ? 'text-error font-bold' : ''}">${borrowed.dueDate}</p>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <p class="text-gray-500">Status:</p>
+                                        <p class="${isOverdue ? 'text-error' : 'text-success'} font-bold">
+                                            ${isOverdue ? 'Overdue' : `Due in ${daysLeft} day${daysLeft !== 1 ? 's' : ''}`}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-actions justify-between mt-4">
+                                <button class="btn btn-xs btn-error cancel-btn">
+                                    <i class="fas fa-times mr-1"></i> Return
+                                </button>
+                                ${hasContent ? 
+                                    `<button class="btn btn-xs btn-primary read-btn">
+                                        <i class="fas fa-book-open mr-1"></i> Read
+                                    </button>` : 
+                                    ''
+                                }
+                                <button class="btn btn-xs btn-info details-btn">
+                                    <i class="fas fa-info-circle mr-1"></i> Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+                
+                // Add event listeners
+                card.querySelector('.cancel-btn').addEventListener('click', () => cancelBorrow(borrowed.id));
+                
+                if (hasContent) {
+                    card.querySelector('.read-btn').addEventListener('click', () => readBook(book.id));
+                }
+                
+                card.querySelector('.details-btn').addEventListener('click', () => viewBookDetails(book.id));
+            });
+        }
+
+        // Cancel book borrowing (return book)
+        function cancelBorrow(borrowId) {
+            if (confirm('Are you sure you want to return this book?')) {
+                const borrowIndex = borrowedBooks.findIndex(b => b.id === borrowId);
+                if (borrowIndex === -1) return;
+                
+                // Update book availability
+                const bookId = borrowedBooks[borrowIndex].bookId;
+                const bookIndex = books.findIndex(b => b.id === bookId);
+                if (bookIndex !== -1) {
+                    books[bookIndex].available += 1;
+                }
+                
+                // Mark as returned
+                borrowedBooks[borrowIndex].returned = true;
+                borrowedBooks[borrowIndex].returnDate = new Date().toISOString().split('T')[0];
+                
+                // Save changes
+                localStorage.setItem('libraryBooks', JSON.stringify(books));
+                localStorage.setItem('studentBorrowedBooks', JSON.stringify(borrowedBooks));
+                
+                alert('Book returned successfully!');
+                loadBorrowedBooks();
+            }
+        }
+
+        // Read book online
+        function readBook(bookId) {
+            const book = books.find(b => b.id === bookId);
+            if (!book || !book.content || !book.content.data) return;
+            
+            const pdfData = book.content.data;
+            const modal = document.createElement('div');
+            modal.className = 'modal modal-open';
+            modal.innerHTML = `
+                <div class="modal-box max-w-6xl w-11/12 max-w-5xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg">Reading: ${book.title}</h3>
+                        <button class="btn btn-sm btn-circle btn-ghost" onclick="this.closest('.modal').remove()">
+                            ✕
+                        </button>
+                    </div>
+                    <div class="pdf-viewer">
+                        <embed src="data:application/pdf;base64,${pdfData}" 
+                               type="application/pdf" width="100%" height="100%">
+                    </div>
+                    <div class="modal-action mt-4">
+                        <button class="btn" onclick="this.closest('.modal').remove()">Close</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // View book details
+        function viewBookDetails(bookId) {
+            const book = books.find(b => b.id === bookId);
+            if (!book) return;
+            
+            const hasContent = book.content && book.content.data;
+            const borrowInfo = borrowedBooks.find(b => b.bookId === book.id && b.studentId === currentUser.id && !b.returned);
+            
+            const modal = document.createElement('div');
+            modal.className = 'modal modal-open';
+            modal.innerHTML = `
+                <div class="modal-box max-w-2xl">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0">
+                            ${book.cover ? 
+                                `<img src="${book.cover}" alt="${book.title}" class="w-48 h-64 object-cover rounded-lg shadow-md">` : 
+                                `<div class="w-48 h-64 bg-gray-200 flex items-center justify-center rounded-lg shadow-md">
+                                    <i class="fas fa-book text-4xl text-gray-400"></i>
+                                </div>`
+                            }
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-xl">${book.title}</h3>
+                            <p class="text-lg text-gray-600">by ${book.author}</p>
+                            
+                            <div class="divider my-2"></div>
+                            
+                            ${borrowInfo ? `
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div>
+                                        <p class="text-gray-500">Borrowed Date</p>
+                                        <p>${borrowInfo.borrowDate}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-500">Due Date</p>
+                                        <p>${borrowInfo.dueDate}</p>
+                                    </div>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div><p class="text-gray-500">Category</p><p>${book.category}</p></div>
+                                <div><p class="text-gray-500">Available</p><p>${book.available}/${book.copies}</p></div>
+                                <div><p class="text-gray-500">Publisher</p><p>${book.publisher || 'N/A'}</p></div>
+                                <div><p class="text-gray-500">Pages</p><p>${book.pages || 'N/A'}</p></div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500">Description</p>
+                                <p class="mt-2 text-sm">${book.description || 'No description available'}</p>
+                            </div>
+                            
+                            <div class="flex gap-2 mt-6 flex-wrap">
+                                ${hasContent ? 
+                                    `<button class="btn btn-sm btn-primary" 
+                                        onclick="readBook('${book.id}'); this.closest('.modal').remove()">
+                                        <i class="fas fa-book-open mr-1"></i> Read Online
+                                    </button>` : 
+                                    ''
+                                }
+                                <button class="btn btn-sm" 
+                                    onclick="this.closest('.modal').remove()">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure we have the latest data
+            borrowedBooks = JSON.parse(localStorage.getItem('studentBorrowedBooks')) || [];
+            loadBorrowedBooks();
+        });
+    </script>
+</body>
+</html>
