@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Add Book</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content { padding-top: 80px; }
+        .form-container { max-width: 800px; margin: 0 auto; }
+        .navbar {
+            position: fixed;
+            z-index: 99999;
+            padding: 15px 0px 15px 15px;
+            width: calc(100% - 20px);
+        }
+        .file-upload-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .file-preview {
+            margin-top: 4px;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body style="padding: 10px; padding-top: .01%;">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow flex">
+        <div class="flex-none" style="padding: 0px 20px 0px 0px;"></div>
+        <div class="flex-1">
+            <img src="D:\Collage\Softwere Engineer\Project\Library\Front(Library)\Capture.png" />
+            <a class="font-bold text-xl ml-4">SCMS</a>
+        </div>
+        <div class="flex-none">
+            <div class="flex justify-between font-bold w-full px-4">
+                <div class="flex gap-x-4"> 
+                    <a href="Home.html" class="text-500 hover:underline">Home</a>
+                    <a href="Books.html" class="text-500 hover:underline text-primary">Add Book</a>
+                    <a href="Categories.html" class="text-500 hover:underline">Categories</a>
+                </div>
+            </div>
+            <div class="dropdown dropdown-end" style="padding: 0px 20px 0px 20px;">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="mask mask-squircle w-10 h-10">
+                        <img src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="Profile" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Profile</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="form-container p-6 bg-base-100 rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold mb-6">Add New Book</h1>
+            
+            <form id="addBookForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Book Title*</span></label>
+                        <input type="text" id="bookTitle" placeholder="Enter book title" class="input input-bordered w-full" required>
+                        <div id="titleError" class="error-message"></div>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Author*</span></label>
+                        <input type="text" id="bookAuthor" placeholder="Enter author name" class="input input-bordered w-full" required>
+                        <div id="authorError" class="error-message"></div>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">ISBN</span></label>
+                        <input type="text" id="bookISBN" placeholder="Enter ISBN" class="input input-bordered w-full">
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Publisher</span></label>
+                        <input type="text" id="bookPublisher" placeholder="Enter publisher" class="input input-bordered w-full">
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Category*</span></label>
+                        <select id="bookCategory" class="select select-bordered w-full" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Programming">Programming</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Multimedia">Multimedia</option>
+                            <option value="Medical">Medical</option>
+                        </select>
+                        <div id="categoryError" class="error-message"></div>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Number of Copies*</span></label>
+                        <input type="number" id="bookCopies" min="1" value="1" class="input input-bordered w-full" required>
+                        <div id="copiesError" class="error-message"></div>
+                    </div>
+                </div>
+                
+                <div class="form-control">
+                    <label class="label"><span class="label-text">Description*</span></label>
+                    <textarea id="bookDescription" rows="4" class="textarea textarea-bordered w-full" placeholder="Enter book description" required></textarea>
+                    <div id="descriptionError" class="error-message"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Publish Date</span></label>
+                        <input type="date" id="bookPublishDate" class="input input-bordered w-full">
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Number of Pages</span></label>
+                        <input type="number" id="bookPages" min="1" class="input input-bordered w-full">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Book Cover Image</span></label>
+                        <div class="file-upload-container">
+                            <input type="file" id="bookCover" accept="image/*" class="file-input file-input-bordered w-full">
+                            <div id="coverPreview" class="file-preview"></div>
+                            <div id="coverError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label class="label"><span class="label-text">Book Content (PDF)*</span></label>
+                        <div class="file-upload-container">
+                            <input type="file" id="bookContent" accept=".pdf" class="file-input file-input-bordered w-full" required>
+                            <div id="contentPreview" class="file-preview"></div>
+                            <div id="contentError" class="error-message"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end gap-4 mt-6">
+                    <button type="button" id="cancelBtn" class="btn btn-ghost">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize books array
+        let books = JSON.parse(localStorage.getItem('libraryBooks')) || [];
+        
+        // Initialize categories if they don't exist
+        if (!localStorage.getItem('libraryCategories')) {
+            const defaultCategories = [
+                {name: "Programming", books: []},
+                {name: "Mathematics", books: []},
+                {name: "Artificial Intelligence", books: []},
+                {name: "Data Science", books: []},
+                {name: "Networking", books: []},
+                {name: "Multimedia", books: []},
+                {name: "Medical", books: []}
+            ];
+            localStorage.setItem('libraryCategories', JSON.stringify(defaultCategories));
+        }
+
+        // Clear all error messages
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+            });
+        }
+
+        // Validate form inputs
+        function validateForm() {
+            let isValid = true;
+            clearErrors();
+
+            // Validate title
+            const title = document.getElementById('bookTitle').value.trim();
+            if (!title) {
+                document.getElementById('titleError').textContent = 'Book title is required';
+                isValid = false;
+            }
+
+            // Validate author
+            const author = document.getElementById('bookAuthor').value.trim();
+            if (!author) {
+                document.getElementById('authorError').textContent = 'Author name is required';
+                isValid = false;
+            }
+
+            // Validate category
+            const category = document.getElementById('bookCategory').value;
+            if (!category) {
+                document.getElementById('categoryError').textContent = 'Please select a category';
+                isValid = false;
+            }
+
+            // Validate copies
+            const copies = document.getElementById('bookCopies').value;
+            if (!copies || parseInt(copies) < 1) {
+                document.getElementById('copiesError').textContent = 'Must have at least 1 copy';
+                isValid = false;
+            }
+
+            // Validate description
+            const description = document.getElementById('bookDescription').value.trim();
+            if (!description) {
+                document.getElementById('descriptionError').textContent = 'Description is required';
+                isValid = false;
+            }
+
+            // Validate PDF file
+            const pdfFile = document.getElementById('bookContent').files[0];
+            if (!pdfFile) {
+                document.getElementById('contentError').textContent = 'PDF file is required';
+                isValid = false;
+            } else if (pdfFile.type !== 'application/pdf') {
+                document.getElementById('contentError').textContent = 'Please upload a valid PDF file';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // File input change handlers
+        document.getElementById('bookCover').addEventListener('change', function(e) {
+            const preview = document.getElementById('coverPreview');
+            const errorElement = document.getElementById('coverError');
+            errorElement.textContent = '';
+            
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                if (!file.type.startsWith('image/')) {
+                    errorElement.textContent = 'Please upload an image file';
+                    this.value = '';
+                    preview.textContent = '';
+                    return;
+                }
+                
+                preview.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+            } else {
+                preview.textContent = '';
+            }
+        });
+
+        document.getElementById('bookContent').addEventListener('change', function(e) {
+            const preview = document.getElementById('contentPreview');
+            const errorElement = document.getElementById('contentError');
+            errorElement.textContent = '';
+            
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                if (file.type !== 'application/pdf') {
+                    errorElement.textContent = 'Please upload a valid PDF file';
+                    this.value = '';
+                    preview.textContent = '';
+                    return;
+                }
+                
+                preview.textContent = `Selected: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
+            } else {
+                preview.textContent = '';
+            }
+        });
+
+        // Form submission
+        document.getElementById('addBookForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return;
+            }
+
+            try {
+                // Get form values
+                const newBook = {
+                    id: Date.now().toString(),
+                    title: document.getElementById('bookTitle').value.trim(),
+                    author: document.getElementById('bookAuthor').value.trim(),
+                    isbn: document.getElementById('bookISBN').value.trim(),
+                    publisher: document.getElementById('bookPublisher').value.trim(),
+                    category: document.getElementById('bookCategory').value,
+                    copies: parseInt(document.getElementById('bookCopies').value),
+                    available: parseInt(document.getElementById('bookCopies').value),
+                    description: document.getElementById('bookDescription').value.trim(),
+                    publishDate: document.getElementById('bookPublishDate').value,
+                    pages: document.getElementById('bookPages').value ? parseInt(document.getElementById('bookPages').value) : null,
+                    cover: null,
+                    content: null,
+                    borrowCount: 0,
+                    addedDate: new Date().toISOString()
+                };
+
+                // Process file uploads
+                const coverFile = document.getElementById('bookCover').files[0];
+                const pdfFile = document.getElementById('bookContent').files[0];
+
+                // Process cover image if exists
+                if (coverFile) {
+                    newBook.cover = await readFileAsDataURL(coverFile);
+                }
+
+                // Process PDF content
+                if (pdfFile) {
+                    newBook.content = {
+                        filename: pdfFile.name,
+                        size: pdfFile.size,
+                        type: pdfFile.type,
+                        lastModified: pdfFile.lastModified,
+                        data: await readFileAsDataURL(pdfFile)
+                    };
+                }
+
+                // Save the book
+                saveBook(newBook);
+                
+            } catch (error) {
+                console.error('Error adding book:', error);
+                alert('An error occurred while adding the book. Please try again.');
+            }
+        });
+
+        // Helper function to read file as Data URL
+        function readFileAsDataURL(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = () => reject(new Error('Failed to read file'));
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function saveBook(book) {
+            // Add to books array
+            books.push(book);
+            localStorage.setItem('libraryBooks', JSON.stringify(books));
+            
+            // Update categories
+            let categories = JSON.parse(localStorage.getItem('libraryCategories'));
+            const categoryIndex = categories.findIndex(c => c.name === book.category);
+            if (categoryIndex !== -1) {
+                categories[categoryIndex].books.push(book.id);
+                localStorage.setItem('libraryCategories', JSON.stringify(categories));
+            }
+
+            alert('Book added successfully!');
+            document.getElementById('addBookForm').reset();
+            document.getElementById('coverPreview').textContent = '';
+            document.getElementById('contentPreview').textContent = '';
+            
+            // Redirect to categories pag
+            window.location.href = 'Categories.html';
+        }
+
+        // Cancel button
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to cancel? All unsaved changes will be lost.')) {
+                window.location.href = 'Categories.html';
+            }
+        });
+    </script>
+</body>
+</html>a

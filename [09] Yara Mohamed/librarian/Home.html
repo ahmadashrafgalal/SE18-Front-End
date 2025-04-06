@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content {
+            padding-top: 80px;
+        }
+        .navbar {
+            position: fixed;
+            z-index: 99999;
+            padding: 15px 0px 15px 15px;
+            width: calc(100% - 20px);
+        }
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body style="padding: 10px; padding-top: .01%;">
+    <!---------------------------------------- Navbar ---------------------------------------->
+    <div class="navbar bg-base-100 shadow flex">
+        <div class="flex-none" style="padding: 0px 20px 0px 0px;"></div>
+        
+        <div class="flex-1">
+            <img src="D:\Collage\Softwere Engineer\Project\Library\Front(Library)\Capture.png" />
+            <a class="font-bold text-xl ml-4">SCMS</a>
+        </div>
+
+
+        <div class="flex-none">
+            <div class="flex justify-between font-bold w-full px-4">
+                <div class="flex gap-x-4"> 
+                    <a href="Home.html" class="text-500 hover:underline text-primary">Home</a>
+                    <a href="Books.html" class="text-500 hover:underline">Add Book</a>
+                    <a href="Categories.html" class="text-500 hover:underline">Categories</a>
+                </div>
+            </div>
+            
+            <!-- Profile or login -->
+            <div class="dropdown dropdown-end" style="padding: 0px 20px 0px 20px;">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="mask mask-squircle w-10 h-10">
+                        <img src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="Profile" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Profile</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------- End of Navbar ---------------------------------------->
+    
+    <!---------------------------------------- Main Content ---------------------------------------->
+    <div class="main-content p-6">
+        <h1 class="text-2xl font-bold mb-6">Library Dashboard</h1>
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card card bg-blue-50 border border-blue-200">
+                <div class="card-body">
+                    <h2 class="card-title text-blue-800">Total Students</h2>
+                    <p class="text-3xl font-bold text-blue-600" id="totalStudents">0</p>
+                    <div class="card-actions justify-end">
+                        <i class="fas fa-users text-blue-300 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card card bg-green-50 border border-green-200">
+                <div class="card-body">
+                    <h2 class="card-title text-green-800">Total Books</h2>
+                    <p class="text-3xl font-bold text-green-600" id="totalBooks">0</p>
+                    <div class="card-actions justify-end">
+                        <i class="fas fa-book text-green-300 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card card bg-yellow-50 border border-yellow-200">
+                <div class="card-body">
+                    <h2 class="card-title text-yellow-800">Borrowed Books</h2>
+                    <p class="text-3xl font-bold text-yellow-600" id="borrowedBooks">0</p>
+                    <div class="card-actions justify-end">
+                        <i class="fas fa-exchange-alt text-yellow-300 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card card bg-red-50 border border-red-200">
+                <div class="card-body">
+                    <h2 class="card-title text-red-800">Overdue Books</h2>
+                    <p class="text-3xl font-bold text-red-600" id="overdueBooks">0</p>
+                    <div class="card-actions justify-end">
+                        <i class="fas fa-exclamation-circle text-red-300 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activity and Popular Books -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <i class="fas fa-history text-blue-500 mr-2"></i>
+                        Recent Activity
+                    </h2>
+                    <div class="space-y-3 mt-4">
+                        <div class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></span>
+                            <span>System initialized</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-2"></span>
+                            <span>Welcome to SCMS Library</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <i class="fas fa-star text-yellow-500 mr-2"></i>
+                        Popular Books
+                    </h2>
+                    <div class="mt-4 space-y-2">
+                        <p>No data available yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load books from localStorage
+        const books = JSON.parse(localStorage.getItem('libraryBooks')) || [];
+        
+        // Update stats
+        document.addEventListener('DOMContentLoaded', function() {
+            // For demo purposes - in a real app these would come from your data
+            document.getElementById('totalBooks').textContent = books.length;
+            
+            // Calculate borrowed books (demo - in real app you'd track this)
+            const borrowed = books.reduce((sum, book) => sum + (book.copies - book.available), 0);
+            document.getElementById('borrowedBooks').textContent = borrowed;
+            
+            // Animate the numbers
+            animateValue('totalStudents', 0, 856, 1000);
+            animateValue('overdueBooks', 0, 23, 1000);
+        });
+        
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+</body>
+</html>
