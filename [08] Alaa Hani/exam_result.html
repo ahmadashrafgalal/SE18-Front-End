@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <title>Exam Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="js/submission.js" defer></script>
+
+    <style>
+        :root {
+            --btn-color: #4a00ff;
+            --btn-hover-color: #3b04c5;
+        }
+        .custom-btn {
+            background-color: var(--btn-color);
+        }
+        .custom-btn:hover {
+            background-color: var(--btn-hover-color);
+        }
+    </style>
+</head>
+<body style="padding: 10px; padding-top: .01%;">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                </div>
+                <ul
+                tabindex="0"
+                class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                <li><a><i class="fas fa-book"></i> Courses</a></li>
+                <li><a><i class="fas fa-table"></i> Tables</a></li>
+                <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                <li><a><i class="fas fa-file-alt"></i> Exams</a></li>
+                <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                <li><a><i class="fas fa-running"></i> Activities</a></li>
+                <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+              
+                <!-- Admin-only option -->
+                <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+              </ul>          
+            </div>
+        </div>
+
+        <div class="navbar-center">
+            <div class="flex-1">
+                <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10" />
+            </div>
+            <a class="btn btn-ghost text-xl">SCMS</a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                            alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+              </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                  <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                  <li><a><i class="fas fa-user"></i> Profile</a></li>
+                  <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            <div class="p-8">
+                <div class="flex justify-center mb-6">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold text-gray-800">Exam Results</h2>
+                        <p class="text-gray-600">Web Development - Midterm Exam</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700 font-medium">Submission Time:</span>
+                        <span class="text-gray-900">April 9, 2025 at 10:45 AM</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700 font-medium">Deadline:</span>
+                        <span class="text-gray-900">April 9, 2025 at 11:00 AM</span>
+                    </div>
+                    <!-- <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700 font-medium">Status:</span>
+                        <span class="text-green-600 font-medium">Submitted Before Deadline</span>
+                    </div> -->
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-4 mb-4 text-xs flex rounded bg-gray-200">
+                            <div style="width: 75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500">75%</div>
+                        </div>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-800">7.5 / 10</div>
+                    <p class="text-gray-600 mt-2">Your Total Score</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <button id="viewScoreBtn" class="custom-btn text-white py-2 px-4 rounded-md flex items-center justify-center">
+                        <a href="detailed_exam_result.html"><i class="fas fa-eye mr-2"></i> View Score Details </a> 
+                    </button>
+                    <button id="returnToDashboardBtn" class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md flex items-center justify-center">
+                        <a href="index.html"> <i class="fas fa-arrow-left mr-2"></i> Return to Dashboard </a> 
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

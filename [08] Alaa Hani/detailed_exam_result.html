@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <title>Detailed Exam Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --btn-color: #4a00ff;
+            --btn-hover-color: #3b04c5;
+        }
+        .custom-btn {
+            background-color: var(--btn-color);
+        }
+        .custom-btn:hover {
+            background-color: var(--btn-hover-color);
+        }
+        .correct-answer {
+            background-color: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
+        }
+        .incorrect-answer {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        .partially-correct {
+            background-color: rgba(234, 179, 8, 0.1);
+            border-left: 4px solid #eab308;
+        }
+    </style>
+</head>
+<body style="padding: 10px; padding-top: .01%;">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                </div>
+                <ul
+                tabindex="0"
+                class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                <li><a><i class="fas fa-book"></i> Courses</a></li>
+                <li><a><i class="fas fa-table"></i> Tables</a></li>
+                <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                <li><a><i class="fas fa-file-alt"></i> Exams</a></li>
+                <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                <li><a><i class="fas fa-running"></i> Activities</a></li>
+                <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+              
+                <!-- Admin-only option -->
+                <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+              </ul>          
+            </div>
+        </div>
+
+        <div class="navbar-center">
+            <div class="flex-1">
+                <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10" />
+            </div>
+            <a class="btn btn-ghost text-xl">SCMS</a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                            alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+              </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                  <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                  <li><a><i class="fas fa-user"></i> Profile</a></li>
+                  <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Detailed Exam Results</h2>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-gray-800">7.5 / 10</div>
+                            <p class="text-gray-600">Web Development - Midterm Exam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg p-4 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <p class="text-gray-700 font-medium">Submission Time:</p>
+                                <p class="text-gray-900">April 9, 2025 at 10:45 AM</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Deadline:</p>
+                                <p class="text-gray-900">April 9, 2025 at 11:00 AM</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Status:</p>
+                                <p class="text-green-600 font-medium">Submitted Before Deadline</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Questions with Answers -->
+            <div class="space-y-6">
+                <!-- Question 1: Multiple Choice (Correct) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden correct-answer">
+                    <div class="p-6">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="text-lg font-semibold">Question 1</h3>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-medium mr-2">Correct</span>
+                                <div class="badge badge-success">+1 point</div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Which of the following is used to create responsive web designs?</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <input type="radio" checked disabled class="radio radio-sm mr-2" />
+                                <span class="text-green-600 font-medium">Media Queries</span>
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>Java Applets</span>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>Flash Animation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>ActiveX Controls</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-md">
+                            <p class="text-green-800 font-medium">Correct Answer: Media Queries</p>
+                            <p class="text-green-700 mt-1">Media queries are CSS techniques that allow content to adapt to different screen sizes and resolutions, making them essential for responsive web design.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2: Multiple Choice (Incorrect) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden incorrect-answer">
+                    <div class="p-6">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="text-lg font-semibold">Question 2</h3>
+                            <div class="flex items-center">
+                                <span class="text-red-600 font-medium mr-2">Incorrect</span>
+                                <div class="badge badge-error">0 points</div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Which HTML tag is used to create a hyperlink?</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>&#60;link&#62;</span>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" checked disabled class="radio radio-sm mr-2" />
+                                <span class="text-red-600 font-medium">&#60;href&#62;</span>
+                                <i class="fas fa-times text-red-600 ml-2"></i>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span class="text-green-600 font-medium">&#60;a&#62;</span>
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>&#60;url&#62;</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-md">
+                            <p class="text-red-800 font-medium">Correct Answer: &#60;a&#62;</p>
+                            <p class="text-red-700 mt-1">The anchor tag &#60;a&#62; is used to create hyperlinks in HTML, typically with an href attribute specifying the URL.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3: Essay Question (Partially Correct) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden partially-correct">
+                    <div class="p-6">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="text-lg font-semibold">Question 3</h3>
+                            <div class="flex items-center">
+                                <span class="text-yellow-600 font-medium mr-2">Partially Correct</span>
+                                <div class="badge badge-warning">+0.5 points</div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Explain the difference between localStorage and sessionStorage in web applications.</p>
+                        
+                        <div class="bg-gray-100 p-4 rounded-md mb-4">
+                            <p class="text-gray-800">localStorage and sessionStorage are both web storage options that allow data to be stored in the browser. The main difference is that localStorage persists even after the browser is closed while sessionStorage is cleared when the session ends.</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-md">
+                            <p class="text-yellow-800 font-medium">Instructor Feedback:</p>
+                            <p class="text-yellow-700 mt-1">Your answer correctly identified the primary difference in persistence but didn't mention other important distinctions such as storage limits (both typically 5MB per domain) and that sessionStorage is specific to a single window/tab while localStorage is shared across all windows/tabs from the same origin.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More questions would continue... -->
+                <!-- Question 4: Multiple Choice (Correct) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden correct-answer">
+                    <div class="p-6">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="text-lg font-semibold">Question 4</h3>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-medium mr-2">Correct</span>
+                                <div class="badge badge-success">+1 point</div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Which CSS property is used to control the space between elements?</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>space</span>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" checked disabled class="radio radio-sm mr-2" />
+                                <span class="text-green-600 font-medium">margin</span>
+                                <i class="fas fa-check text-green-600 ml-2"></i>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>spacing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" disabled class="radio radio-sm mr-2" />
+                                <span>gap</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-md">
+                            <p class="text-green-800 font-medium">Correct Answer: margin</p>
+                            <p class="text-green-700 mt-1">The margin property in CSS is used to create space around elements, outside of any defined borders.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 5: Essay Question (Correct) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden correct-answer">
+                    <div class="p-6">
+                        <div class="flex justify-between mb-4">
+                            <h3 class="text-lg font-semibold">Question 5</h3>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-medium mr-2">Correct</span>
+                                <div class="badge badge-success">+1 point</div>
+                            </div>
+                        </div>
+                        <p class="mb-4">Describe the purpose of JavaScript frameworks like React, Angular, or Vue. Why are they useful in modern web development?</p>
+                        
+                        <div class="bg-gray-100 p-4 rounded-md mb-4">
+                            <p class="text-gray-800">JavaScript frameworks like React, Angular, and Vue provide structured environments for building complex web applications. They offer component-based architecture that makes code more reusable and maintainable. These frameworks handle complex DOM manipulations efficiently through virtual DOM implementations, improve development speed with ready-to-use components, and enforce best practices. They also provide state management solutions which is crucial for large applications. Additionally, they support creating single-page applications (SPAs) that offer better user experiences with faster transitions between views.</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-md">
+                            <p class="text-green-800 font-medium">Instructor Feedback:</p>
+                            <p class="text-green-700 mt-1">Excellent answer! You've covered all the key benefits of JavaScript frameworks including component-based architecture, efficient DOM manipulation, improved development speed, and state management. Your explanation demonstrates a solid understanding of modern web development concepts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-6">
+            
+                <button id="returnToDashboardBtn" class="custom-btn text-white py-2 px-4 rounded-md flex items-center">
+                    <a href="index.html"><i class="fas fa-home mr-2"></i> Return to Dashboard</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Event listeners for buttons
+        document.getElementById('backToResultsBtn').addEventListener('click', function() {
+            window.location.href = 'exam_result.html';
+        });
+        
+        document.getElementById('returnToDashboardBtn').addEventListener('click', function() {
+            window.location.href = 'exam_dashboard.html';
+        });
+    </script>
+</body>
+</html>
