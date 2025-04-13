@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Complaint</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-base-100">
+
+    <!-- Navbar -->
+    <div class="navbar bg-white border-b shadow-sm px-6">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl text-primary font-bold">🎓 FCAI</a>
+        </div>
+        <div class="hidden lg:flex gap-4 text-gray-700 font-medium">
+            <a class="btn btn-ghost">Home</a>
+            <a class="btn btn-ghost">Courses</a>
+            <a class="btn btn-ghost">Exams</a>
+            <a class="btn btn-ghost">Reports</a>
+            <a href="support-home-page.html" class="btn btn-ghost text-primary border-b-2 border-primary">help ?</a>
+        </div>
+
+        <div class="flex items-center gap-4 ml-4">
+            <div class="form-control">
+                <input type="text" placeholder="Search"
+                    class="input input-bordered rounded-full w-40 md:w-60 bg-gray-100" />
+            </div>
+            <button class="btn btn-ghost text-xl">⚙️</button>
+            <button class="btn btn-ghost text-xl">🔔</button>
+            <div class="avatar">
+                <div class="w-8 rounded-full">
+                    <img src="https://i.pravatar.cc/100" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complaint Form -->
+    <div class="p-8 max-w-3xl mx-auto">
+        <div class="card bg-base-100 border border-base-200 shadow-sm">
+            <div class="card-body">
+                <h2 class="text-xl font-semibold mb-4">Tell us how we can help you</h2>
+
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text">Title of complaint</span>
+                    </label>
+                    <input type="text" placeholder="Value" class="input input-bordered" />
+                </div>
+
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text">Category</span>
+                    </label>
+                    <select class="select select-bordered">
+                        <option disabled selected>Value</option>
+                        <option>Technical</option>
+                        <option>Academic</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text">Description</span>
+                    </label>
+                    <textarea class="textarea textarea-bordered" placeholder="Value"></textarea>
+                </div>
+
+                <div class="form-control mb-4">
+                    <label class="cursor-pointer label">
+                        <input type="checkbox" class="checkbox mr-2" />
+                        <span class="label-text">
+                            I accept the terms<br />
+                            <a href="#" class="link link-primary text-sm">Read our T&Cs</a>
+                        </span>
+                    </label>
+                </div>
+
+                <button class="btn btn-success w-fit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

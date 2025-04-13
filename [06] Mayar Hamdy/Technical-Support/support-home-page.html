@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-base-100">
+
+  <!-- Navbar -->
+  <div class="navbar bg-white border-b shadow-sm px-6">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-xl text-primary font-bold">🎓 FCAI</a>
+    </div>
+    <div class="hidden lg:flex gap-4 text-gray-700 font-medium">
+      <a class="btn btn-ghost">Home</a>
+      <a class="btn btn-ghost">Courses</a>
+      <a class="btn btn-ghost">Exams</a>
+      <a class="btn btn-ghost">Reports</a>
+      <a href="support-home-page.html" class="btn btn-ghost text-primary border-b-2 border-primary">help ?</a>
+    </div>
+
+    <div class="flex items-center gap-4 ml-4">
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-bordered rounded-full w-40 md:w-60 bg-gray-100" />
+      </div>
+      <button class="btn btn-ghost text-xl">⚙️</button>
+      <button class="btn btn-ghost text-xl">🔔</button>
+      <div class="avatar">
+        <div class="w-8 rounded-full">
+          <img src="https://i.pravatar.cc/100" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div class="p-8 max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold mb-2">Welcome to the Support Center!</h1>
+    <p class="text-lg mb-6">How can we help you today?</p>
+
+    <h2 class="text-sm text-gray-500 mb-4">Quick Links</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- New Complaint -->
+      <a href="new-complaint.html"
+        class="card bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition cursor-pointer">
+        <div class="card-body">
+          <div class="text-3xl">➕</div>
+          <h2 class="card-title">New Complaint</h2>
+          <p>Report an issue or request help in a few quick steps.</p>
+        </div>
+      </a>
+
+      <!-- Complaints History -->
+      <a href="complaints-history.html"
+        class="card bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition cursor-pointer">
+        <div class="card-body">
+          <div class="text-3xl">🕒</div>
+          <h2 class="card-title">Complaints History</h2>
+          <p>View your submitted complaints and their status.</p>
+        </div>
+      </a>
+
+      <!-- Frequent Questions -->
+      <a href="frequent-questions.html"
+        class="card bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition cursor-pointer">
+        <div class="card-body">
+          <div class="text-3xl">❓</div>
+          <h2 class="card-title">Frequent Questions</h2>
+          <p>Find quick answers to common student questions.</p>
+        </div>
+      </a>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

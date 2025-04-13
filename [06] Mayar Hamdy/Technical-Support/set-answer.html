@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Answer (Employee)</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000', // black for titles like first page
+                        success: '#00B26F'  // green from first page
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+    <div class="navbar bg-white border-b shadow-sm px-6">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl text-primary font-bold">🎓 FCAI</a>
+        </div>
+        <div class="hidden lg:flex gap-4 text-gray-700 font-medium">
+            <a class="btn btn-ghost">Home</a>
+            <a class="btn btn-ghost">Courses</a>
+            <a class="btn btn-ghost">Exams</a>
+            <a class="btn btn-ghost">Reports</a>
+            <a href="support-home-page.html" class="btn btn-ghost text-primary border-b-2 border-primary">help ?</a>
+        </div>
+
+        <div class="flex items-center gap-4 ml-4">
+            <div class="form-control">
+                <input type="text" placeholder="Search"
+                    class="input input-bordered rounded-full w-40 md:w-60 bg-gray-100" />
+            </div>
+            <button class="btn btn-ghost text-xl">⚙️</button>
+            <button class="btn btn-ghost text-xl">🔔</button>
+            <div class="avatar">
+                <div class="w-8 rounded-full">
+                    <img src="https://i.pravatar.cc/100" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Complaint Section -->
+        <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-primary mb-4">The Complaint Content</h2>
+
+            <div class="form-control mb-4">
+                <label class="label">
+                    <span class="label-text text-gray-900 font-medium">Title of Complaint</span>
+                </label>
+                <input type="text" class="input input-bordered bg-white" value="Course Content Not Updated" disabled />
+            </div>
+
+            <div class="form-control mb-4">
+                <label class="label">
+                    <span class="label-text text-gray-900 font-medium">Category</span>
+                </label>
+                <select class="select select-bordered bg-white" disabled>
+                    <option selected>Courses</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text text-gray-900 font-medium">Description</span>
+                </label>
+                <textarea class="textarea textarea-bordered bg-white h-32" disabled>
+I enrolled in the Web Development course, but the materials are outdated and do not cover the latest technologies like React 18 or modern CSS. I would like to know if there are any updates planned or if I can switch to another course.
+                </textarea>
+            </div>
+        </div>
+
+        <!-- Set Answer Section -->
+        <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-primary">Set Answer</h2>
+                <input type="checkbox" class="checkbox checkbox-success" checked />
+            </div>
+
+            <div class="form-control mb-4">
+                <textarea class="textarea textarea-bordered bg-white h-40"
+                    placeholder="Write your answer here..."></textarea>
+            </div>
+
+            <button class="btn btn-success w-fit">Submit</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
