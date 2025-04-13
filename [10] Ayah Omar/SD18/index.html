@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Profile</div>
+    <ul>
+      <li>Home</li>
+      <li>Courses</li>
+      <li>Profile</li>
+      <li>Result</li>
+    </ul>
+    <div class="nav-icons">
+      <input type="text" placeholder="Search">
+      <span class="icon">⚙️</span>
+      <img src="profile.jpg" class="profile-pic" alt="Profile">
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Student Registration -->
+    <h2>Student Registration</h2>
+    <form class="registration-form">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>GPA</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>National ID Number</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>Academic Level</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="text">
+      </div>
+      <div class="buttons">
+        <button type="button" class="cancel">Cancel</button>
+        <button type="submit" class="register">Registration</button>
+      </div>
+    </form>
+
+    <!-- Students Table -->
+    <h2 style="margin-top: 50px;">First Year</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>National ID Number</th>
+          <th>Phone</th>
+          <th>More</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ayah Omar Hassan</td>
+          <td>30502092200845</td>
+          <td>01020185693</td>
+          <td>
+            <div class="actions">
+              <button class="more">...</button>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Lily Anne Carter Smith</td>
+          <td>30502040596821</td>
+          <td>01235264978</td>
+          <td>
+            <div class="actions">
+              <button class="more">...</button>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Maya Lynn Brown</td>
+          <td>30345009866545</td>
+          <td>01018569260</td>
+          <td>
+            <div class="actions">
+              <button class="more">...</button>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Emma Rose Taylor</td>
+          <td>8790929220084</td>
+          <td>01123337569</td>
+          <td>
+            <div class="actions">
+              <button class="more">...</button>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="more-btn">
+      <button>More</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
