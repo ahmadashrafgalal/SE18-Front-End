@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <title>Exams</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/exam_home.css">
+</head>
+
+<body style="padding: 10px; padding-top: .01%;">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                    <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                    <li><a><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a><i class="fas fa-table"></i> Tables</a></li>
+                    <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                    <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                    <li><a href="exam_home.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+                    <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                    <li><a><i class="fas fa-running"></i> Activities</a></li>
+                    <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+                    <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <div class="flex-1">
+                <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10" />
+            </div>
+            <a class="btn btn-ghost text-xl">SCMS</a>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                    <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                    <li><a><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- page content -->
+    <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+                <p class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome to your
+                    Doctor's Dashboard</p>
+            </div>
+
+            <!--  Quick Links -->
+            <h3 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Quick links
+            </h3>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                <!-- Home card -->
+                <a href="exam_home.html" class="block hover:no-underline no-underline text-inherit">
+                    <div
+                        class="card-hover flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col h-full">
+                        <div class="text-[#0e141b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="card-title text-[#0e141b] text-base font-bold leading-tight">Home</h2>
+                            <p class="text-[#4e7397] text-sm font-normal leading-normal">Go to your doctor's dashboard
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Create exam card -->
+                <a href="exam_create.html" class="block hover:no-underline no-underline text-inherit">
+                    <div
+                        class="card-hover flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col h-full">
+                        <div class="text-[#0e141b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="card-title text-[#0e141b] text-base font-bold leading-tight">Create exam</h2>
+                            <p class="text-[#4e7397] text-sm font-normal leading-normal">Create a new exam</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Manage exams card -->
+                <a href="exam_manage.html" class="block hover:no-underline no-underline text-inherit">
+                    <div
+                        class="card-hover flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col h-full">
+                        <div class="text-[#0e141b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="card-title text-[#0e141b] text-base font-bold leading-tight">Manage exams</h2>
+                            <p class="text-[#4e7397] text-sm font-normal leading-normal">Manage all your exams</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- View results card -->
+                <a href="exam_view_results.html" class="block hover:no-underline no-underline text-inherit">
+                    <div
+                        class="card-hover flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col h-full">
+                        <div class="text-[#0e141b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="card-title text-[#0e141b] text-base font-bold leading-tight">View results</h2>
+                            <p class="text-[#4e7397] text-sm font-normal leading-normal">View results for all exams</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Assignments card -->
+                <a href="#" class="block hover:no-underline no-underline text-inherit">
+                    <div
+                        class="card-hover flex flex-1 gap-3 rounded-lg border border-[#d0dbe7] bg-slate-50 p-4 flex-col h-full">
+                        <div class="text-[#0e141b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h2 class="card-title text-[#0e141b] text-base font-bold leading-tight">Assignments</h2>
+                            <p class="text-[#4e7397] text-sm font-normal leading-normal">View assignments</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--  Upcoming Exams -->
+            <h3 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Upcoming exams
+            </h3>
+            <div class="grid grid-cols-[40px_1fr] gap-x-2 px-4">
+                <div class="flex flex-col items-center gap-1 pt-3">
+                    <div class="text-[#0e141b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="w-[1.5px] bg-[#d0dbe7] h-2 grow"></div>
+                </div>
+                <div class="exam-card flex flex-1 flex-col py-3 pl-2  border border-transparent">
+                    <p class="exam-title text-[#0e141b] text-base font-medium leading-normal">Exam 1</p>
+                    <p class="exam-date text-[#4e7397] text-base font-normal leading-normal">July 21, 2023</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-[1.5px] bg-[#d0dbe7] h-2"></div>
+                    <div class="text-[#0e141b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="w-[1.5px] bg-[#d0dbe7] h-2 grow"></div>
+                </div>
+                <div class="exam-card flex flex-1 flex-col py-3 pl-2 border border-transparent">
+                    <p class="exam-title text-[#0e141b] text-base font-medium leading-normal">Exam 2</p>
+                    <p class="exam-date text-[#4e7397] text-base font-normal leading-normal">August 12, 2023</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-1 pb-3">
+                    <div class="w-[1.5px] bg-[#d0dbe7] h-2"></div>
+                    <div class="text-[#0e141b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="exam-card flex flex-1 flex-col py-3 pl-2  border border-transparent">
+                    <p class="exam-title [#0e141b] text-base font-medium leading-normal">Exam 3</p>
+                    <p class="exam-date [#4e7397] text-base font-normal leading-normal">September 15, 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->
+</body>
+
+</html>

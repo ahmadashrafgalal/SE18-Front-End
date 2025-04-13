@@ -1,0 +1,31 @@
+.exam-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.exam-card:hover {
+    background-color: #f8f9fa;
+    border-left: 3px solid #4900FF;
+    transform: translateX(5px);
+}
+
+.exam-card:hover .exam-title {
+    color: #4900FF;
+    font-weight: 600;
+}
+
+.action-btn {
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+}
+
+.edit-btn:hover {
+    color: #3b82f6;
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+}

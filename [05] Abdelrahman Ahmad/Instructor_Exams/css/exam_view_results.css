@@ -1,0 +1,40 @@
+.exam-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.exam-card:hover {
+    background-color: #f8f9fa;
+    border-left: 3px solid #4900FF;
+    transform: translateX(5px);
+}
+
+.failed-row {
+    background-color: #fff0f0;
+}
+
+.passed-row {
+    background-color: #f0fff0;
+}
+
+.progress-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background-color: #4900FF;
+    transition: width 0.5s ease;
+}
+
+.stat-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.stat-card:hover {
+    border-left: 3px solid #4900FF;
+}

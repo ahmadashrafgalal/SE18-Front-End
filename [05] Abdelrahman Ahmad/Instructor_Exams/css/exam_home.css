@@ -1,0 +1,44 @@
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(73, 0, 255, 0.1);
+    border-color: #4900FF;
+}
+
+.card-hover:hover .card-title {
+    color: #4900FF;
+}
+
+.card-hover:hover svg {
+    fill: #4900FF;
+    transform: scale(1.1);
+}
+
+.card-hover svg {
+    transition: all 0.3s ease;
+}
+
+
+
+.exam-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.exam-card:hover {
+    background-color: #f8f9fa;
+    border-left: 3px solid #4900FF;
+    transform: translateX(5px);
+}
+
+.exam-card:hover .exam-title {
+    color: #4900FF;
+    font-weight: 600;
+}
+
+.exam-card:hover .exam-date {
+    color: #6c757d;
+}

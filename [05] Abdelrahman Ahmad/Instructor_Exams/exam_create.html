@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <title>Create exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/exam_create.css">
+</head>
+
+<body style="padding: 10px; padding-top: .01%;">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                    <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                    <li><a><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a><i class="fas fa-table"></i> Tables</a></li>
+                    <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                    <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                    <li><a href="exam_home.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+                    <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                    <li><a><i class="fas fa-running"></i> Activities</a></li>
+                    <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+                    <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <div class="flex-1">
+                <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10">
+            </div>
+            <a class="btn btn-ghost text-xl">SCMS</a>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp">
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                    <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                    <li><a><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end Navbar -->
+
+    <!-- page content -->
+    <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <!-- عنوان الصفحة -->
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+                <div class="flex min-w-72 flex-col gap-3">
+                    <h1 class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight">Create an exam</h1>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal">
+                        Exams are a great way to assess your students' understanding of the material. You can
+                        create an exam by adding questions from your question bank or by creating
+                        new questions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Associated Course field-->
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Associated Course</p>
+                    <select
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal">
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="math101">Mathematics 101</option>
+                        <option value="physics201">Physics 201</option>
+                        <option value="chemistry301">Chemistry 301</option>
+                        <option value="biology401">Biology 401</option>
+                        <option value="cs501">Computer Science 501</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- exam title field -->
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Title</p>
+                    <input placeholder="Enter the title of the exam"
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+                        value="">
+                </label>
+            </div>
+
+            <!-- exam description field -->
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Description</p>
+                    <textarea placeholder="Add a description for your exam"
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] min-h-36 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"></textarea>
+                </label>
+            </div>
+
+            <!-- duration field-->
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Duration</p>
+                    <select
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal">
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30">30 minutes</option>
+                        <option value="60">1 hour</option>
+                        <option value="90">1.5 hours</option>
+                        <option value="120">2 hours</option>
+                        <option value="180">3 hours</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- start date -->
+            <h3 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Start Time
+            </h3>
+            <div class="flex flex-wrap items-center justify-center gap-6 p-4">
+                <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+                    <div class="flex items-center p-1 justify-between">
+                        <button class="nav-button" id="prev-month-start">
+                            <div class="text-[#0e141b] flex size-10 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+                        <p class="text-[#0e141b] text-base font-bold leading-tight flex-1 text-center"
+                            id="current-month-start">June 2025</p>
+                        <button class="nav-button" id="next-month-start">
+                            <div class="text-[#0e141b] flex size-10 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7" id="start-calendar-days">
+                        <!-- will be filled with js -->
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <label class="flex flex-col">
+                        <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Time</p>
+                        <input type="time" id="start-time"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+                            value="09:00">
+                    </label>
+                </div>
+            </div>
+
+            <!-- due date -->
+            <h3 class="text-[#0e141b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Due Time</h3>
+            <div class="flex flex-wrap items-center justify-center gap-6 p-4">
+                <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+                    <div class="flex items-center p-1 justify-between">
+                        <button class="nav-button" id="prev-month-due">
+                            <div class="text-[#0e141b] flex size-10 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+                        <p class="text-[#0e141b] text-base font-bold leading-tight flex-1 text-center"
+                            id="current-month-due">June 2025</p>
+                        <button class="nav-button" id="next-month-due">
+                            <div class="text-[#0e141b] flex size-10 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7" id="due-calendar-days">
+                        <!-- will be filled with js -->
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <label class="flex flex-col">
+                        <p class="text-[#0e141b] text-base font-medium leading-normal pb-2">Time</p>
+                        <input type="time" id="due-time"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-14 placeholder:text-[#4e7397] p-[15px] text-base font-normal leading-normal"
+                            value="11:00">
+                    </label>
+                </div>
+            </div>
+
+            <!-- action buttons -->
+            <div class="flex px-4 py-3 justify-end gap-4">
+                <button id="upload-questions-btn"
+                    class="secondary-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#4900FF] text-[#ffffff] text-base font-bold leading-normal tracking-[0.015em]">
+                    <span class="truncate">add questions</span>
+                </button>
+                <button id="save-exam-btn"
+                    class="primary-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#156bc1] text-slate-50 text-base font-bold leading-normal tracking-[0.015em]">
+                    <span class="truncate">Save &amp; publish</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->
+
+    <!-- add question page -->
+    <div id="questions-page" class="fixed inset-0 bg-white z-50 overflow-auto hidden">
+        <div class="container mx-auto px-40 py-10">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-[#0e141b] text-2xl font-bold">Add Questions to Exam</h2>
+                <button id="close-questions-btn" class="text-red-500 hover:text-red-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- question type cards -->
+            <div class="mb-8">
+                <h3 class="text-[#0e141b] text-lg font-bold mb-4">Question Types</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="question-types">
+                    <div class="question-type-card border rounded-lg p-4" data-type="multiple-choice">
+                        <h4 class="font-bold mb-2"><i class="fas fa-list-ol mr-2"></i>Multiple Choice</h4>
+                        <p class="text-sm text-gray-600">Questions with multiple possible answers</p>
+                    </div>
+                    <div class="question-type-card border rounded-lg p-4" data-type="true-false">
+                        <h4 class="font-bold mb-2"><i class="fas fa-check-circle mr-2"></i>True/False</h4>
+                        <p class="text-sm text-gray-600">Questions with true or false answers</p>
+                    </div>
+                    <div class="question-type-card border rounded-lg p-4" data-type="short-answer">
+                        <h4 class="font-bold mb-2"><i class="fas fa-align-left mr-2"></i>Short Answer</h4>
+                        <p class="text-sm text-gray-600">Questions with short text answers</p>
+                    </div>
+                    <div class="question-type-card border rounded-lg p-4" data-type="essay">
+                        <h4 class="font-bold mb-2"><i class="fas fa-file-alt mr-2"></i>Essay</h4>
+                        <p class="text-sm text-gray-600">Long-form essay questions</p>
+                    </div>
+                    <div class="question-type-card border rounded-lg p-4" data-type="matching">
+                        <h4 class="font-bold mb-2"><i class="fas fa-object-group mr-2"></i>Matching</h4>
+                        <p class="text-sm text-gray-600">Matching items from two columns</p>
+                    </div>
+                    <div class="question-type-card border rounded-lg p-4" data-type="fill-blank">
+                        <h4 class="font-bold mb-2"><i class="fas fa-edit mr-2"></i>Fill in the Blank</h4>
+                        <p class="text-sm text-gray-600">Questions with missing words to fill</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions list -->
+            <div class="mb-8">
+                <h3 class="text-[#0e141b] text-lg font-bold mb-4">Exam Questions</h3>
+                <div class="space-y-4" id="questions-list">
+                    <!-- questions will be added here by js-->
+                </div>
+                <button id="add-question-btn"
+                    class="mt-4 px-4 py-2 bg-[#4900FF] text-white rounded-lg hover:bg-[#3a00cc]">
+                    <i class="fas fa-plus mr-2"></i> Add New Question
+                </button>
+            </div>
+
+            <!-- save buttons -->
+            <div class="flex justify-end gap-4">
+                <button id="cancel-questions-btn" class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">
+                    Cancel
+                </button>
+                <button id="save-questions-btn" class="px-6 py-2 bg-[#156bc1] text-white rounded-lg hover:bg-[#11559b]">
+                    Save Questions
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/exam_create.js"></script>
+
+</body>
+
+</html>

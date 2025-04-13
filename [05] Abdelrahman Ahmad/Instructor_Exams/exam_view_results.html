@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <title>View Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/exam_view_results.css">
+</head>
+
+<body style="padding: 10px; padding-top: .01%;">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-64 p-4 shadow">
+                    <li><a><i class="fas fa-home"></i> Homepage</a></li>
+                    <li><a><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a><i class="fas fa-table"></i> Tables</a></li>
+                    <li><a><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                    <li><a><i class="fas fa-tasks"></i> Assignment</a></li>
+                    <li><a href="exam_home.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+                    <li><a><i class="fas fa-book-reader"></i> Library</a></li>
+                    <li><a><i class="fas fa-running"></i> Activities</a></li>
+                    <li><a><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a><i class="fas fa-comment-dots"></i> Complains</a></li>
+                    <li><a><i class="fas fa-user-plus"></i> Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <div class="flex-1">
+                <img src="https://i.imgur.com/vhEak3B.png" alt="DaisyUI logo" class="w-10 h-10" />
+            </div>
+            <a class="btn btn-ghost text-xl">SCMS</a>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-58 p-3 shadow">
+                    <li><a><i class="fas fa-sign-in-alt"></i> login</a></li>
+                    <li><a><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <!-- Page Content -->
+    <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+                <h1 class="text-[#0e141b] tracking-light text-[32px] font-bold leading-tight min-w-72">View Exam Results
+                </h1>
+            </div>
+
+            <!-- Exam Selection -->
+            <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-6">
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                        <span class="label-text">Select Exam</span>
+                    </label>
+                    <select id="examSelect" class="select select-bordered w-full">
+                        <option disabled selected>Choose an exam</option>
+                        <!-- Options will be added by JavaScript -->
+                    </select>
+                </div>
+                <button id="viewResultsBtn" class="btn bg-[#4900FF] text-white mt-6">View Results</button>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div id="statsContainer" class="hidden grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
+                <div class="stat-card bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="text-sm text-gray-500">Total Students</h3>
+                    <p id="totalStudents" class="text-2xl font-bold">0</p>
+                </div>
+                <div class="stat-card bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="text-sm text-gray-500">Passed</h3>
+                    <p id="passedStudents" class="text-2xl font-bold text-green-600">0</p>
+                </div>
+                <div class="stat-card bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="text-sm text-gray-500">Failed</h3>
+                    <p id="failedStudents" class="text-2xl font-bold text-red-600">0</p>
+                </div>
+                <div class="stat-card bg-white p-4 rounded-lg shadow-sm">
+                    <h3 class="text-sm text-gray-500">Average Score</h3>
+                    <p id="averageScore" class="text-2xl font-bold">0%</p>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div id="resultsContainer" class="hidden p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 id="examTitle" class="text-xl font-bold"></h2>
+                    <button id="exportBtn" class="btn btn-outline btn-success">
+                        <i class="fas fa-file-excel mr-2"></i> Export to Excel
+                    </button>
+                </div>
+                <div class="overflow-x-auto bg-white rounded-lg shadow-sm">
+                    <table class="table w-full">
+                        <thead>
+                            <tr>
+                                <th class="bg-[#f8f9fa]">Student Name</th>
+                                <th class="bg-[#f8f9fa]">Grade</th>
+                                <th class="bg-[#f8f9fa]">Percentage</th>
+                                <th class="bg-[#f8f9fa]">Progress</th>
+                                <th class="bg-[#f8f9fa]">Status</th>
+                                <th class="bg-[#f8f9fa]">Submission Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                            <!-- Results will be added here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- No Exam Selected Message -->
+            <div id="noExamMessage" class="p-8 text-center">
+                <i class="fas fa-clipboard-list text-4xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-500">No Exam Selected</h3>
+                <p class="text-gray-400">Please select an exam from the dropdown to view results</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/exam_view_results.js"></script>
+</body>
+
+</html>

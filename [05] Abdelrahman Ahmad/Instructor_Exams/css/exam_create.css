@@ -1,0 +1,72 @@
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:hover {
+    border-color: #4900FF;
+    box-shadow: 0 0 0 3px rgba(73, 0, 255, 0.1);
+}
+
+.form-input:focus {
+    border-color: #4900FF;
+    box-shadow: 0 0 0 3px rgba(73, 0, 255, 0.2);
+}
+
+.calendar-day {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.calendar-day:hover:not(.selected-day) {
+    background-color: rgba(73, 0, 255, 0.1);
+    color: #4900FF;
+}
+
+.selected-day {
+    background-color: #4900FF;
+    color: white;
+}
+
+.nav-button {
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(73, 0, 255, 0.1);
+    color: #4900FF;
+    border-radius: 50%;
+}
+
+.secondary-button {
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #3a00cc;
+    transform: translateY(-2px);
+}
+
+.primary-button {
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: #11559b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(21, 107, 193, 0.3);
+}
+
+.question-type-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.question-type-card:hover {
+    border-color: #4900FF;
+    transform: translateY(-3px);
+}
+
+.question-type-card.selected {
+    border-color: #4900FF;
+    background-color: rgba(73, 0, 255, 0.05);
+}
