@@ -1,0 +1,2 @@
+C:/Users/amrta/OneDrive/Desktop/FCAI/Third Year FCAI/second semester/Software Development/college_app/android/app/.cxx/Debug/m35344n5/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/amrta/OneDrive/Desktop/FCAI/Third Year FCAI/second semester/Software Development/college_app/android/app/.cxx/Debug/m35344n5/armeabi-v7a/CMakeFiles/rebuild_cache.dir
