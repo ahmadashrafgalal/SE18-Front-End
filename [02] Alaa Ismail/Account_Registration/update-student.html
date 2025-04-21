@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style=" padding-top: .01%;">
+    <!---------------------------------------- Navbar ---------------------------------------->
+    <div class="navbar bg-base-100 shadow flex" style="position: fixed ;z-index: 99999;padding:15px 0px 15px 15px">
+        <!-- side bar -->
+        <div class="flex-none" style="padding: 0px 20px 0px 0px;">
+
+        </div>
+        <div class="flex-1">
+         
+              <div class="avatar">
+                <div class="w-20 rounded-full">
+                  <img src="5778556872893254029_1202.jpg" />
+                </div>
+                
+              </div>
+              <a class="font-bold text-xl ml-4">SCMS</a>
+        </div>
+
+
+        <div class="flex-none">
+            <div class="flex justify-between font-bold w-full px-4">
+                <div class="flex gap-x-4"> 
+                    <a href="display-students.html" class="text-500 hover:underline">Students list</a>
+                    <!-- <a href="#" class="text-500 hover:underline">Registered Courses</a> -->
+                </div>
+            </div>
+            
+
+            <!-- Profile or login -->
+            <div class="dropdown dropdown-end" style="padding: 0px  20px 0px 20px;">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar" >
+                <div class="mask mask-squircle w-24" h-26>
+                    <img src="5965345610481649103_1213.jpg" />
+                  </div>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li>
+                <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                </a>
+                </li>
+                <li><a>Logout</a></li>
+            </ul>
+            </div>
+    
+        </div>
+    </div>
+    <!---------------------------------------- End of Navbar ---------------------------------------->
+    <!---------------------------------------- Main ---------------------------------------->
+
+    <div class="Main" style="margin-top: 105px;">
+        <div class="card bg-base-100 shadow-xl p-10  ">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Student Name 1 -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Student Name</span>
+                        </label>
+                        <input type="text" placeholder="Alaa Ismail" class="input input-bordered" name="">
+                    </div>
+    
+                    <!-- Student Name 2 -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Student Code </span>
+                        </label>
+                        <input type="text" placeholder="221080" class="input input-bordered" name="">
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">National ID </span>
+                        </label>
+                        <input type="text" placeholder="35451744571" class="input input-bordered" name="">
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Email </span>
+                        </label>
+                        <input type="text" placeholder="alaaismail3@gmail.com" class="input input-bordered" name="">
+                    </div>
+
+                    <div class="form-control relative">
+                        <label class="label">
+                          <span class="label-text">Level</span>
+                        </label>
+                      
+                        <!-- Input Box -->
+                        <input
+                          type="text"
+                          id="levelInput"
+                          placeholder="1"
+                          class="input input-bordered w-full"
+                          readonly
+                          onclick="toggleDropdown()"
+                        />
+                      
+                        <!-- Dropdown Options -->
+                        <ul
+                          id="levelDropdown"
+                          class="menu bg-base-200 w-full rounded-box mt-1 absolute hidden max-h-48 overflow-auto shadow z-50"
+                          style="top: 60%; left: 0;"
+                        >
+                          <li><a onclick="selectLevel('Level 1')">Level 1</a></li>
+                          <li><a onclick="selectLevel('Level 2')">Level 2</a></li>
+                          <li><a onclick="selectLevel('Level 3')">Level 3</a></li>
+                          <li><a onclick="selectLevel('Level 4')">Level 4</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="form-control">
+                        
+                        <label class="label">
+                            <span class="label-text">GPA</span>
+                        </label>
+                        <input type="text" value="3.5" class="input input-bordered" disabled>
+                    </div>
+                      
+                      
+                    <!-- Image Upload -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Image</span>
+                        </label>
+                        <div class="flex items-center gap-6">
+                            <div class="avatar">
+                                <div class="w-24 h-24 rounded-xl bg-gray-200 overflow-hidden">
+                                    <img id="profile_pic"
+                                        src="images.png"
+                                        onerror="this.style.display='none'" />
+                                </div>
+                            </div>
+                            <input id="id_Inst_Profile_img" name="image" type="file" class="file-input w-full max-w-xs" />
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Join Button -->
+                <div class="flex justify-center mt-10">
+                    <button class="btn btn-accent w-80 text-white" >
+                        Update Student
+                    </button>
+                    <button class="btn w-80 text-white" style="background-color: midnightblue;">
+                       Ignore Updating
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <!---------------------------------------- End of Main ---------------------------------------->
+
+
+
+</body>
+
+
+  <script>
+    const dropdown = document.getElementById("levelDropdown");
+    const input = document.getElementById("levelInput");
+  
+    function toggleDropdown() {
+      dropdown.classList.toggle("hidden");
+    }
+  
+    function selectLevel(value) {
+      input.value = value;
+      dropdown.classList.add("hidden");
+    }
+  
+    // لو المستخدم ضغط خارج العنصر نقفل الدروب داون
+    window.addEventListener('click', function(e){
+      if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add("hidden");
+      }
+    });
+  </script>
+
+</html>
